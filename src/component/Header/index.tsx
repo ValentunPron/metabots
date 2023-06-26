@@ -40,9 +40,9 @@ export const Header = (): JSX.Element => {
 											<div>
 												Login
 												<svg width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M18.3 3H23.18C23.8272 3 24.4478 3.21071 24.9054 3.58579C25.363 3.96086 25.62 4.46957 25.62 5V19C25.62 19.5304 25.363 20.0391 24.9054 20.4142C24.4478 20.7893 23.8272 21 23.18 21H18.3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-													<path d="M12.2 17L18.3 12L12.2 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-													<path d="M18.3 12H3.66003" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+													<path d="M18.3 3H23.18C23.8272 3 24.4478 3.21071 24.9054 3.58579C25.363 3.96086 25.62 4.46957 25.62 5V19C25.62 19.5304 25.363 20.0391 24.9054 20.4142C24.4478 20.7893 23.8272 21 23.18 21H18.3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+													<path d="M12.2 17L18.3 12L12.2 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+													<path d="M18.3 12H3.66003" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 												</svg>
 											</div>
 										</button>

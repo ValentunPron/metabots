@@ -1,0 +1,118 @@
+.filterItem {
+	position: relative;
+	padding-top: 17px;
+	margin-top: 35px;
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0; left: 0;
+		background-color: #45D9FC;
+		width: 100%; height: 1px;
+	}
+	transition: all 0.4s ease;
+}
+
+.filter_up {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	font-size: 1rem;
+	font-family: 'b Biger Over', system-ui, sans-serif;
+	line-height: 2.1;
+}
+
+.poput_button {
+	background-color: transparent;
+	transform: rotate(180deg);
+	transition: all 0.4s ease;
+	&.active {
+		transform: rotate(0deg);
+	}
+}
+
+.filter_content {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 15px;
+	opacity: 0;
+	transition: all 0.4s ease;
+	transform: translateY(-50px);
+	z-index: -1;
+	&.active {
+		position: relative;
+		opacity: 1;
+		transform: translateY(0px);
+		z-index: 2;
+	}
+}
+
+.container {
+	display: inline-flex;
+	position: relative;
+	font-size: 1rem;
+	padding-left: 40px;
+	line-height: 1.2;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+  }
+
+  .container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 24px;
+	width: 24px;
+	background-color: transparent;
+	border: 1.5px solid #45D9FC;
+  }
+
+  /* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	filter: drop-shadow(10px -3px 15px #45d9fc);
+	-webkit-filter: drop-shadow(10px -3px 15px #45d9fc);
+	-moz-filter: drop-shadow(10px -3px 15px #45d9fc);
+  }
+  
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+	left: 6px;
+	top: 2px;
+	width: 9px;
+	height: 14px;
+	border: solid #45D9FC;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }

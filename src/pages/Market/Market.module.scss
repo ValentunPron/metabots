@@ -1,0 +1,20 @@
+.market {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	gap: 30px;
+	.market_top {
+		grid-area: 1 / 2 / 2 / 3;
+		padding: 50px;
+		border: 2px solid blue;
+	}
+	.sidebar {
+		grid-area: 1 / 1 / 3 / 2;
+		border: 2px solid red;
+	}
+	.main {
+		grid-area: 2 / 2 / 3 / 3;
+		padding: 50px;
+		border: 2px solid purple;
+	}
+}
