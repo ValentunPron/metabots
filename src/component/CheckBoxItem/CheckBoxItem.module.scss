@@ -116,3 +116,10 @@
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
   }
+
+@media (max-width: 1240px) {
+	.title {
+		font-size: 0.9rem;
+		line-height: 2;
+	}
+} 

@@ -3,16 +3,17 @@ import React from 'react';
 import styles from './Sidebar.module.scss';
 import { Filter } from '../Filter';
 
-export const Sidebar = (): JSX.Element => {
+export const Sidebar = ({ closeBurger }: any): JSX.Element => {
 
 	return (
 		<nav className={styles.sidebar}>
 			<div className={styles.siderbar_category}>
 				<button className={`${styles.button_category} ${styles.active}`}>Pieces</button>
 				<button className={styles.button_category}>Complete Robot</button>
+				<button className='burger active' onClick={closeBurger}></button>
 			</div>
 			<div className={styles.sidebar_content}>
-				<div className={styles.reset}>
+				<div className={`${styles.reset} reset`}>
 					<button>Reset</button>
 				</div>
 				<div className={styles.search}>

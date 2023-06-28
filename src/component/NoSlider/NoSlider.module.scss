@@ -1,0 +1,62 @@
+.body {
+	position: relative;
+}
+
+.bg_slider {
+	position: absolute;
+	width: 100%;
+	pointer-events: none;
+	z-index: 10;
+}
+
+.slider {
+	position: relative;
+	z-index: 10;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 35px;
+	.left {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		font-size: 1rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		line-height: 1;
+	}
+	svg {
+		width: 24px; height: 24px;
+	}
+}
+
+.bottom {
+	display: flex;
+	gap: 47px;
+	color: #E4E2E2;
+	font-size: 1rem;
+	line-height: 1.05;
+	margin-top: 18px;
+}
+
+.input {
+	text-align: center;
+	background: #1E1F28;
+	color: #E4E2E2;
+	max-width: 110px;
+	padding: 6px 0;
+	font-size: 1rem;
+	line-height: 1;
+}
+
+@media (max-width: 1240px) {
+	.bottom {
+		justify-content: space-between;
+		gap: 20px;
+	}
+	.input {
+		max-width: 80px;
+	}
+}

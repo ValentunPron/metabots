@@ -1,0 +1,30 @@
+.button {
+	margin: 0 auto;
+	margin-top: 16px;
+	min-width: 164px;
+	text-align: center;
+}
+
+.search_list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	.search_item {
+		display: inline-flex;
+		color: #000;
+		padding: 6px 10px;
+		background: #2F9D9D;
+		font-size: 0.8rem;
+		line-height: 1.1;
+	}
+}
+
+.slider_item {
+	margin-top: 35px;
+}
+
+@media (max-width: 780px) {
+	.slider_item  {
+		margin-top: 25px;
+	}
+}

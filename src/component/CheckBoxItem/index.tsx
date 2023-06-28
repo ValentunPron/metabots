@@ -2,14 +2,24 @@ import React from 'react';
 
 import styles from './CheckBoxItem.module.scss';
 
-export const CheckBoxItem = (): JSX.Element => {
+type IArrayItems = {
+	name: string;
+	value: string;
+};
+
+interface ICheckBoxItem {
+	title: string,
+	arrayItems: IArrayItems[],
+}
+
+export const CheckBoxItem = ({ title, arrayItems }: ICheckBoxItem): JSX.Element => {
 
 	const [status, setStatus] = React.useState(false);
 
 	return (
 		<div className={styles.filterItem}>
 			<div className={styles.filter_up}>
-				<h3 className={styles.title}>Body Part</h3>
+				<h3 className={styles.title}>{title}</h3>
 				<button className={`${styles.poput_button} ${status ? styles.active : ''}`} onClick={() => setStatus(!status)}>
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g id="DOWN ARROW">
@@ -21,31 +31,15 @@ export const CheckBoxItem = (): JSX.Element => {
 				</button>
 			</div>
 			<div className={`${styles.filter_content} ${status ? styles.active : ''}`}>
-				<label className={styles.container}>
-					All
-					<input type="checkbox" value="all" />
-					<span className={styles.checkmark}></span>
-				</label>
-				<label className={styles.container}>
-					Core
-					<input type="checkbox" value="core" />
-					<span className={styles.checkmark}></span>
-				</label>
-				<label className={styles.container}>
-					Right Arm
-					<input type="checkbox" value="right_arm" />
-					<span className={styles.checkmark}></span>
-				</label>
-				<label className={styles.container}>
-					Left Arm
-					<input type="checkbox" value="left_arm" />
-					<span className={styles.checkmark}></span>
-				</label>
-				<label className={styles.container}>
-					Legs
-					<input type="checkbox" value="legs" />
-					<span className={styles.checkmark}></span>
-				</label>
+				{
+					arrayItems.map((item) => (
+						<label className={styles.container}>
+							{item.name}
+							<input type="checkbox" value={item.value} />
+							<span className={styles.checkmark}></span>
+						</label>
+					))
+				}
 			</div>
 		</div>
 	)
