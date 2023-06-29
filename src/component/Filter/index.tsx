@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { CheckBoxItem } from '../CheckBoxItem';
+import { NoSlider } from '../NoSlider';
 import styles from '../CheckBoxItem/CheckBoxItem.module.scss';
 import style from './Filter.module.scss'
-import { NoSlider } from '../NoSlider';
+
 
 import iconFilter01 from '../../assest/image/filter/01.svg'
 import iconFilter02 from '../../assest/image/filter/02.svg'
 import iconFilter03 from '../../assest/image/filter/03.svg'
 import iconFilter04 from '../../assest/image/filter/04.svg'
-
 
 export const Filter = (): JSX.Element => {
 
