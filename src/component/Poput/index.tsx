@@ -13,7 +13,7 @@ export const Poput = (): JSX.Element => {
 	return (
 		<div className={styles.sort}>
 			<span>Sort by</span>
-			<button className={styles.sort_button} onClick={() => setActive(!active)}>
+			<button className={`${styles.sort_button} ${active ? styles.active : ''}`} onClick={() => setActive(!active)}>
 				{status === 'last_listre' ? 'Last listre' : capitalizeFirstLetter(status)}
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<g id="DOWN ARROW">
