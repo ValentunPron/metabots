@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/metabots/static/css/main.eecb0d1f.css",
+    "main.js": "/metabots/static/js/main.ab018f28.js",
+    "static/media/header-robot.png": "/metabots/static/media/header-robot.ffac51404c9ead5d633f.png",
+    "static/media/no_founded.png": "/metabots/static/media/no_founded.98693700b88679f4e018.png",
+    "static/media/01.png": "/metabots/static/media/01.54ebd78d5460d3c168d9.png",
+    "static/media/bBigerOver.woff": "/metabots/static/media/bBigerOver.90a0456519fc3b06fb77.woff",
+    "static/media/bBigerOver.woff2": "/metabots/static/media/bBigerOver.58d275f483ee7795f7b8.woff2",
+    "static/media/01.svg": "/metabots/static/media/01.6db8b2b777ba01849d32378ee7fc42fa.svg",
+    "static/media/04.svg": "/metabots/static/media/04.3405ce7499b518632be9b421e291707c.svg",
+    "index.html": "/metabots/index.html",
+    "static/media/03.svg": "/metabots/static/media/03.ebf3451fac463fad9e9d04f8aa5c6d8a.svg",
+    "static/media/02.svg": "/metabots/static/media/02.ea8cbb3fcd1de783872944bc6ff307ae.svg",
+    "main.eecb0d1f.css.map": "/metabots/static/css/main.eecb0d1f.css.map",
+    "main.ab018f28.js.map": "/metabots/static/js/main.ab018f28.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eecb0d1f.css",
+    "static/js/main.ab018f28.js"
+  ]
+}
