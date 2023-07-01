@@ -242,6 +242,12 @@ header {
 }
 
 @media (max-width: 780px) {
+	header {
+		padding-bottom: 20px;
+	}
+	.main {
+		margin-top: 20px;
+	}
 	.burger {
 		display: block;
 	}
