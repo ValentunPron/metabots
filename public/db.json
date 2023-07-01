@@ -35,21 +35,72 @@
 			"realyPrice": 22
 		},
 		{
-			"id": 2,
-			"name": "Huisa",
-			"age": 39,
-			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
+			"id": 3,
+			"name": "Legs",
+			"age": 392,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/02.png",
 			"bodyPart": "Legs",
-			"rarety": "Common",
-			"family": "Flying",
+			"rarety": "UnCommon",
+			"family": "Humanoid",
 			"status": {
-				"life": 20,
+				"life": 10,
+				"attack": 15,
+				"deffense": 20,
+				"speed": 20
+			},
+			"price": 1,
+			"realyPrice": 30
+		},
+		{
+			"id": 4,
+			"name": "R. Hand",
+			"age": 2,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
+			"bodyPart": "Right Arm",
+			"rarety": "Rare",
+			"family": "Humanoid",
+			"status": {
+				"life": 25,
 				"attack": 25,
 				"deffense": 10,
-				"speed": 90
+				"speed": 10
 			},
-			"price": 2,
-			"realyPrice": 20
+			"price": 10,
+			"realyPrice": 90
+		},
+		{
+			"id": 5,
+			"name": "R. Hand",
+			"age": 2,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
+			"bodyPart": "Right Arm",
+			"rarety": "Rare",
+			"family": "Humanoid",
+			"status": {
+				"life": 20,
+				"attack": 35,
+				"deffense": 10,
+				"speed": 10
+			},
+			"price": 6,
+			"realyPrice": 90
+		},
+		{
+			"id": 5,
+			"name": "L. Hand",
+			"age": 21,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/04.png",
+			"bodyPart": "Left Arm",
+			"rarety": "Legendary",
+			"family": "Humanoid",
+			"status": {
+				"life": 60,
+				"attack": 75,
+				"deffense": 40,
+				"speed": 40
+			},
+			"price": 16,
+			"realyPrice": 90
 		}
 	]
 }

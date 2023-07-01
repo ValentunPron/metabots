@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './component';
+import { Footer, Header } from './component';
 import { Market } from './pages';
 
 import axios from 'axios';
@@ -12,6 +12,7 @@ function App() {
       <main className='main'>
         <Market />
       </main>
+      <Footer />
     </div>
   );
 }
