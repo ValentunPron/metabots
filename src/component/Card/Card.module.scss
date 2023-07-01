@@ -138,3 +138,86 @@
 		justify-content: space-between;
 	}
 }
+
+@media (max-width: 1000px) {
+	.card {
+		padding: 2.5%;
+		max-width: 280px;
+	}
+	.card_top {
+		padding-bottom: 10px;
+		gap: 20px;
+		.card_info {
+			padding: 20px 0;
+		}
+		img {
+			width: calc((1vh + 1vw) * 9);
+			height: auto;
+		}
+	}
+	.card_bottom {
+		margin-top: 15px;
+		.priceInfo_left {
+			gap: 8px;
+		}
+		.card_active {
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+			button {
+				font-size: 0.9rem;
+				max-height: 36px;
+				max-width: 80px;
+			}
+		}
+	}
+}
+
+@media (max-width: 780px) {
+	.card {
+		padding: 20px;
+		max-width: 320px;
+	}
+	.card_top {
+		gap: 15px;
+		img {
+			min-width: 100px;
+			height: auto;
+		}
+		.card_info {
+			gap: 7.5px;
+		}
+	}
+}
+
+@media (max-width: 570px) {
+	.card {
+		padding: 25px;
+		width: 100%;
+		max-width: 340px;
+	}
+	.card_top {
+		display: flex;
+		justify-content: space-between;
+		img {
+			width: 130px;
+		}
+	}
+	.card_skills {
+		gap: 15px;
+		padding: 10px 0 20px 0;
+		.card_skill {
+			gap: 7.5px;
+		}
+		.skill_info {
+			max-height: 10px;
+			max-width: 200px;
+			width: 100%;
+		}
+	}
+	.card_bottom {
+		.card_price {
+			font-size: 1rem;
+		}
+	}
+}
