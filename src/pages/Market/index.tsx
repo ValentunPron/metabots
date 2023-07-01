@@ -5,11 +5,21 @@ import { Sidebar } from '../../component/Sidebar';
 import { Card, Poput } from '../../component';
 
 import notFound from '../../assest/image/market/no_founded.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRobots } from '../../redux/slices/robots';
+import { ICard } from '../../component/Card';
 
 export const Market = (): JSX.Element => {
 
+	const dispatch: Function = useDispatch();
+	const robots = useSelector((state: any) => state.robots.robots)
+	React.useEffect(() => {
+		dispatch(fetchRobots())
+	}, [])
+
 	const [burger, setBurger] = React.useState(false);
-	const [num, setNum] = React.useState(2);
+
+	console.log(robots);
 
 	return (
 		<div className='container'>
@@ -25,18 +35,15 @@ export const Market = (): JSX.Element => {
 					<Sidebar closeBurger={() => setBurger(!burger)} />
 				</div>
 				<div className={styles.main}>
-					<div className={styles.result}>0 result</div>
+					<div className={styles.result}>{robots.items.length} result</div>
 					<div className={styles.main_body}>
 						{
-							num
+							robots.items.length > 0
 								?
 								<div className={styles.main_list}>
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
+									{
+										robots.items.map((robot: ICard) => <Card {...robot} key={`${robot.id}_${robot.name}`} />)
+									}
 								</div>
 								: <div className={styles.notFound}>
 									<img src={notFound} alt="not found" height={300} width={310} />

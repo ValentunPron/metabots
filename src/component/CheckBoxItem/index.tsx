@@ -33,7 +33,7 @@ export const CheckBoxItem = ({ title, arrayItems }: ICheckBoxItem): JSX.Element 
 			<div className={`${styles.filter_content} ${status ? styles.active : ''}`}>
 				{
 					arrayItems.map((item) => (
-						<label className={styles.container}>
+						<label className={styles.container} key={item.name}>
 							{item.name}
 							<input type="checkbox" value={item.value} />
 							<span className={styles.checkmark}></span>

@@ -1,0 +1,55 @@
+{
+	"robots": [
+		{
+			"id": 0,
+			"name": "Geisha",
+			"age": 3892,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
+			"bodyPart": "Legs",
+			"rarety": "Legendary",
+			"family": "Humanoid",
+			"status": {
+				"life": 40,
+				"attack": 65,
+				"deffense": 70,
+				"speed": 50
+			},
+			"price": 2,
+			"realyPrice": 64
+		},
+		{
+			"id": 1,
+			"name": "Geisa",
+			"age": 389,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
+			"bodyPart": "Legs",
+			"rarety": "Epic",
+			"family": "Spider",
+			"status": {
+				"life": 30,
+				"attack": 55,
+				"deffense": 50,
+				"speed": 70
+			},
+			"price": 1,
+			"realyPrice": 22
+		},
+		{
+			"id": 2,
+			"name": "Huisa",
+			"age": 39,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
+			"bodyPart": "Legs",
+			"rarety": "Common",
+			"family": "Flying",
+			"status": {
+				"life": 20,
+				"attack": 25,
+				"deffense": 10,
+				"speed": 90
+			},
+			"price": 2,
+			"realyPrice": 20
+		}
+	]
+}

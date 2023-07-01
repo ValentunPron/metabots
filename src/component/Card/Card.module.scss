@@ -17,6 +17,7 @@
 .card_top {
 	position: relative;
 	display: flex;
+	justify-content: space-between;
 	padding-bottom: 15px;
 	gap: 60px;
 	&::after {
@@ -192,7 +193,7 @@
 
 @media (max-width: 570px) {
 	.card {
-		padding: 25px;
+		padding: 20px;
 		width: 100%;
 		max-width: 340px;
 	}
@@ -200,7 +201,7 @@
 		display: flex;
 		justify-content: space-between;
 		img {
-			width: 130px;
+			width: 100px;
 		}
 	}
 	.card_skills {

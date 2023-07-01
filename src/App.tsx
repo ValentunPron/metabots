@@ -2,6 +2,8 @@ import React from 'react';
 import { Header } from './component';
 import { Market } from './pages';
 
+import axios from 'axios';
+
 
 function App() {
   return (

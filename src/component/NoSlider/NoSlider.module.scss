@@ -1,3 +1,4 @@
+
 .body {
 	position: relative;
 }
@@ -34,7 +35,7 @@
 
 .bottom {
 	display: flex;
-	gap: 47px;
+	justify-content: space-between;
 	color: #E4E2E2;
 	font-size: 1rem;
 	line-height: 1.05;
