@@ -101,6 +101,23 @@
 			},
 			"price": 16,
 			"realyPrice": 90
+		},
+		{
+			"id": 5,
+			"name": "L. Hand",
+			"age": 21,
+			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/04.png",
+			"bodyPart": "Left Arm",
+			"rarety": "Legendary",
+			"family": "Humanoid",
+			"status": {
+				"life": 60,
+				"attack": 75,
+				"deffense": 40,
+				"speed": 40
+			},
+			"price": 16,
+			"realyPrice": 90
 		}
 	]
 }
