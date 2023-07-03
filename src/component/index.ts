@@ -6,5 +6,6 @@ import { Header } from "./Header";
 import { NoSlider } from "./NoSlider";
 import { Poput } from "./Poput";
 import { Sidebar } from "./Sidebar";
+import { CardLoader } from "./Card/CardLoader";
 
-export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer }
+export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer, CardLoader }

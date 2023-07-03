@@ -7,6 +7,14 @@ export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
 	return data.robots; 
 });
 
+export const setLoaded = createAsyncThunk('robts/setLoaded', async (status) => {
+	if(status) {
+		return 'loaded'
+	} else {
+		return 'loading'
+	}
+});
+
 
 const initialState = {
 	robots: {
@@ -30,6 +38,15 @@ const robotsSlices = createSlice({
 		},
 		[fetchRobots.rejected]: (state) => {
 			state.robots.items = [];
+			state.robots.status = 'error';
+		},
+		[setLoaded.pending]: (state) => {
+			state.robots.status = 'loading';
+		},
+		[setLoaded.fulfilled]: (state, action) => {
+			state.robots.status = 'loaded';
+		},
+		[setLoaded.rejected]: (state) => {
 			state.robots.status = 'error';
 		},
 	},

@@ -24,8 +24,16 @@ export interface ICard {
 
 export const Card = ({ name, age, img, bodyPart, rarety, family, status, price, realyPrice }: ICard): JSX.Element => {
 
+	const cardRarety: any = {
+		'Common': styles.common,
+		'UnCommon': styles.unCommon,
+		'Rare': styles.rage,
+		'Epic': styles.epic,
+		'Legendary': styles.legendary,
+	}
+
 	return (
-		<div className={styles.card}>
+		<div className={`${styles.card} ${cardRarety[rarety]}`}>
 			<div className={styles.test}>
 				<div className={styles.card_top}>
 					<Link to="/">
