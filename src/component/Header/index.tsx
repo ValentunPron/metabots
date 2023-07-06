@@ -14,7 +14,7 @@ export const Header = (): JSX.Element => {
 		<header>
 			<div className="container">
 				<div className={`${styles.header} ${burger ? styles.active : ''}`}>
-					<Link to='/cart' className='logo'>
+					<Link to='/' className='logo'>
 						<img src={logo} alt="logo" width={45} height={45} />
 						Metabots
 					</Link>

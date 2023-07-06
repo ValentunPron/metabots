@@ -1,28 +1,10 @@
 import { Link } from 'react-router-dom';
 
 import styles from './Card.module.scss'
-import image from '../../assest/image/market/01.png';
 import mon from '../../assest/image/logo.png';
+import { IRobot } from '../../types/IRobot';
 
-export interface ICard {
-	id: string,
-	name: string,
-	age: number,
-	img: string,
-	bodyPart: string,
-	rarety: string,
-	family: string,
-	status: {
-		life: number,
-		attack: number,
-		deffense: number,
-		speed: number,
-	}
-	price: number,
-	realyPrice: number,
-}
-
-export const Card = ({ name, age, img, bodyPart, rarety, family, status, price, realyPrice }: ICard): JSX.Element => {
+export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, price, realyPrice }: IRobot): JSX.Element => {
 
 	const cardRarety: any = {
 		'Common': styles.common,
@@ -36,7 +18,7 @@ export const Card = ({ name, age, img, bodyPart, rarety, family, status, price, 
 		<div className={`${styles.card} ${cardRarety[rarety]}`}>
 			<div className={styles.test}>
 				<div className={styles.card_top}>
-					<Link to="/">
+					<Link to={`/robot/${id}`}>
 						<img className={styles.image} src={img} alt={name} height={150} width={150} />
 					</Link>
 					<div className={styles.card_info}>
@@ -77,7 +59,9 @@ export const Card = ({ name, age, img, bodyPart, rarety, family, status, price, 
 					<p className={styles.card_price}>{price}<span>[${realyPrice}]</span></p>
 				</div>
 				<div className={styles.card_active}>
-					<button className='button'>Details</button>
+					<Link to={`/robot/${id}`}>
+						<button className='button'>Details</button>
+					</Link>
 					<button className='button trans'>Buy Now</button>
 				</div>
 			</div>

@@ -1,0 +1,79 @@
+.robot_top {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 125px;
+	padding-bottom: 40px;
+	.core {
+		font-size: 1.5rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		line-height: 1;
+	}
+	.piece, .rarity {
+		font-size: 1.2rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		line-height: 1;
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0; left: 0;
+		height: 1px; width: 100%;
+		background: #45D9FC;
+	}
+}
+
+.robog_bg {
+	margin: 32px 0;
+	padding: 20px;
+	background: rgba(44, 45, 58, 0.60);
+}
+
+.return {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	background-color: transparent;
+	color: #767676;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1.1;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease;
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0; right: 0;
+		width: 85%; height: 1px;
+		background-color: transparent;
+		transition: all 0.3s ease;
+	}
+	&:hover {
+		color: #55CCCC;
+		&::after {
+			background-color: #55CCCC;
+		}
+	}
+}
+
+.robot_body {
+	margin-top: 30px;
+	.robot_body_top {
+		display: flex;
+		gap: 36px;
+	}
+	.robot_image {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		width: 400px; height: 400px;
+		border-radius: 8px;
+		background: #08090C;
+		img {
+			width: 100%;
+			max-width: 340px;
+			height: auto;
+		}
+	}
+}

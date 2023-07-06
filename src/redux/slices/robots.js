@@ -3,17 +3,20 @@ import axios from 'axios';
 
 
 export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
-	const data  = await axios('./db.json').then(({data}) => data)
-	return data.robots; 
+	const data = await axios('./db.json').then(({ data }) => data)
+	return data.robots;
 });
 
-export const setLoaded = createAsyncThunk('robts/setLoaded', async (status) => {
-	if(status) {
-		return 'loaded'
-	} else {
-		return 'loading'
+export const setLoadedStatus = createAsyncThunk(
+	'robots/setLoaded',
+	async (status) => {
+	  return status ? 'loaded' : 'loading';
 	}
-});
+  );
+
+  export const setLoaded = (status) => (dispatch) => {
+	  dispatch(setLoadedStatus(status));
+  };
 
 
 const initialState = {
@@ -40,16 +43,17 @@ const robotsSlices = createSlice({
 			state.robots.items = [];
 			state.robots.status = 'error';
 		},
-		[setLoaded.pending]: (state) => {
+		[setLoadedStatus.pending]: (state) => {
 			state.robots.status = 'loading';
 		},
-		[setLoaded.fulfilled]: (state, action) => {
-			state.robots.status = 'loaded';
+		[setLoadedStatus.fulfilled]: (state, action) => {
+			console.log(action.payload);
+			state.robots.status = action.payload;
 		},
-		[setLoaded.rejected]: (state) => {
+		[setLoadedStatus.rejected]: (state) => {
 			state.robots.status = 'error';
 		},
 	},
-});	
+});
 
 export const robotReducer = robotsSlices.reducer
