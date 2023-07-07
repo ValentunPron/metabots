@@ -26,6 +26,7 @@
 .robog_bg {
 	margin: 32px 0;
 	padding: 20px;
+	padding-bottom: 50px;
 	background: rgba(44, 45, 58, 0.60);
 }
 
@@ -60,20 +61,256 @@
 .robot_body {
 	margin-top: 30px;
 	.robot_body_top {
-		display: flex;
+		display: grid;
+		grid-template-columns: auto 1fr;
 		gap: 36px;
 	}
 	.robot_image {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
 		width: 400px; height: 400px;
 		border-radius: 8px;
 		background: #08090C;
+		padding: 15px;
+		&::after {
+			position: absolute;
+			content: '';
+			border-radius: 8px;
+			top: -1px; left: -1px; right: -2px; bottom: -1px;
+			z-index: -1;
+		}
 		img {
 			width: 100%;
-			max-width: 340px;
 			height: auto;
+		}
+	}
+	.robot_info_top	{
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		.name {
+			font-family: 'b Biger Over', system-ui, sans-serif;
+			font-size: 1.2rem;
+			line-height: 1.4;
+		}
+		.part {
+			color: #45D9FC;
+			font-size: 1.2rem;
+			line-height: 1.4;
+		}
+		.age {
+			font-size: 1.2rem;
+			line-height: 1.4;
+		}
+	}
+	.robot_info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.robot_item {
+		width: 100%;
+	}
+}
+
+.stats {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	gap: 30px;
+	border-radius: 8px;
+	background: rgba(8, 9, 12, 0.60);
+	padding: 40px;
+	input {
+		pointer-events: none;
+	}
+	.stats_item {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 100px auto auto;
+		gap: 20px;
+		width: 100%;
+	}
+	.stats_info {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		&.life {
+			color: #5CC;
+		}
+		&.att {
+			color: #FFE144;
+		}
+		&.def {
+			color: #5846F9;
+		}
+		&.spe {
+			color: #F25AC9;
+		}
+	}
+	.stats_name {
+		font-size: 1rem;
+		text-transform: uppercase;
+		line-height: 1.1;
+		letter-spacing: 0.45px;
+		color: inherit;
+	}
+	.stats_linear {
+		max-height: 10px;
+		max-width: 300px;
+		width: 100%;
+	}
+	.stats_number {
+		margin-left: 10px;
+		font-size: 1rem;
+		line-height: 1.1;
+		letter-spacing: 0.45px;
+		color: #E4E2E2;
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0; left: 0;
+		background-color: #1E1F28;
+		width: 100%; height: 1px;
+	}
+}
+
+.offers {
+	padding-top: 30px;
+	width: 100%;
+	.offers_body {
+		border-radius: 8px;
+		background: rgba(8, 9, 12, 0.60);
+		width: 100%;
+		padding: 45px 20px;
+		text-align: center;
+		font-size: 1rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+	}
+}
+
+.price {
+	.price_body {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.price_bg {
+		width: 100%;
+		border-radius: 8px;
+		padding: 16px;
+		background: #111217;
+	}
+	.price_bottom {
+		padding: 49px;
+		padding-bottom: 20px;
+	}
+	.price_date, .price_subtitle, .totalPrice {
+		margin-bottom: 30px;
+	}
+	.price_date {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		span {
+			color: #F25AC9;
+		}
+	}
+	.price_action {
+		text-align: right;
+	}
+}
+
+.totalPrice {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.totalPrice_left {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 0.8rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+	}
+	.totalPrice_price {
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		font-size: 1.5rem;
+		line-height: 1.2;
+		color: #F25AC9;
+		span {
+			font-family: 'Odibee Sans', system-ui, sans-serif;
+			color: #C4C4C4;
+			margin-left: 10px;
+			font-size: 1rem;
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.robot_body {
+		.robot_image {
+			width: 300px; height: 300px;
+			border-radius: 8px;
+			background: #08090C;
+			padding: 10px;
+			img {
+				width: 90%;
+			}
+		}
+	}
+	.stats {
+		gap: 20px;
+		padding: 20px;
+		.stats_item {
+			grid-template-columns: 80px auto auto;
+			gap: 10px;
+		}
+		.stats_info {
+			svg {
+				width: 20px; height: auto;
+			}
+		}
+		.stats_name {
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			line-height: 1.1;
+			letter-spacing: 0.45px;
+			color: inherit;
+		}
+	}
+}
+
+@media (max-width: 780px) {
+	.robot_body {
+		position: relative;
+		.robot_image {
+			margin: 50px auto 0 auto;
+			width: 80%; height: auto;
+		}
+		.robot_item {
+			width: 100%;
+			margin-top: -25px;
+		}
+		.robot_info_top {
+			position: absolute;
+			top: 0;
+		}
+		.robot_body_top {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.price {
+		.price_action {
+			text-align: center;
 		}
 	}
 }

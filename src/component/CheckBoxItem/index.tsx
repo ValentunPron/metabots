@@ -10,9 +10,10 @@ type IArrayItems = {
 interface ICheckBoxItem {
 	title: string,
 	arrayItems: IArrayItems[],
+	children?: any,
 }
 
-export const CheckBoxItem = ({ title, arrayItems }: ICheckBoxItem): JSX.Element => {
+export const CheckBoxItem = ({ title, arrayItems, children }: ICheckBoxItem): JSX.Element => {
 
 	const [status, setStatus] = React.useState(false);
 
@@ -30,17 +31,21 @@ export const CheckBoxItem = ({ title, arrayItems }: ICheckBoxItem): JSX.Element 
 					</svg>
 				</button>
 			</div>
-			<div className={`${styles.filter_content} ${status ? styles.active : ''}`}>
-				{
-					arrayItems.map((item) => (
-						<label className={styles.container} key={item.name}>
-							{item.name}
-							<input type="checkbox" value={item.value} />
-							<span className={styles.checkmark}></span>
-						</label>
-					))
-				}
-			</div>
+			{
+				<div className={`${styles.filter_content} ${status ? styles.active : ''}`}>
+					{
+						children
+							? children
+							: arrayItems.map((item) => (
+								<label className={styles.container} key={item.name}>
+									{item.name}
+									<input type="checkbox" value={item.value} />
+									<span className={styles.checkmark}></span>
+								</label>
+							))
+					}
+				</div>
+			}
 		</div>
 	)
 }

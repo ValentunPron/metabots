@@ -2,7 +2,7 @@ import React from 'react';
 import { Footer, Header, RobotPages } from './component';
 import { Market } from './pages';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchRobots } from './redux/slices/robots';
 
 
