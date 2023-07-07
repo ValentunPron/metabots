@@ -25,7 +25,7 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 			<div className={styles.robot_top}>
 				<span className={styles.core}>core</span>
 				<span className={styles.piece}>Piece #{currentItem.id}</span>
-				<p className={styles.rarity}>Rarity: <span className={currentItem.rarety}>{currentItem.rarety}</span></p>
+				<p className={styles.rarity}>Rarity: <span className={currentItem.rarety.name}>{currentItem.rarety.name}</span></p>
 			</div>
 			<div className={styles.robog_bg}>
 				<Link to='/'>

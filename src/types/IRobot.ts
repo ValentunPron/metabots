@@ -4,7 +4,10 @@ export interface IRobot {
 	age: number,
 	img: string,
 	bodyPart: string,
-	rarety: string,
+	rarety: {
+		status: number,
+		name: string,
+	},
 	family: string,
 	status: {
 		life: number,

@@ -15,7 +15,7 @@ export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, pri
 	}
 
 	return (
-		<div className={`${styles.card} ${cardRarety[rarety]}`}>
+		<div className={`${styles.card} ${cardRarety[rarety.name]}`}>
 			<div className={styles.test}>
 				<div className={styles.card_top}>
 					<Link to={`/robot/${id}`}>
@@ -23,7 +23,7 @@ export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, pri
 					</Link>
 					<div className={styles.card_info}>
 						<h3 className={styles.card_name}>{name}</h3>
-						<h4 className={styles.card_status}>{rarety}</h4>
+						<h4 className={styles.card_status}>{rarety.name}</h4>
 						<p className={styles.card_age}>Age: {age}</p>
 					</div>
 				</div>

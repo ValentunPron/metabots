@@ -6,13 +6,23 @@ import { Card, CardLoader, Poput } from '../../component';
 
 import notFound from '../../assest/image/market/no_founded.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { setLoaded } from '../../redux/slices/robots';
 import { IRobot } from '../../types/IRobot';
+import { setSortBy } from '../../redux/slices/filter';
+import { filterRobots, setLoadedStatus } from '../../redux/slices/robots';
 
 export const Market = (): JSX.Element => {
 
 	const dispatch: Function = useDispatch();
-	const robots = useSelector((state: any) => state.robots.robots)
+	const { robots, sortBy } = useSelector((state: any) => {
+		return {
+			robots: state.robots.robots,
+			sortBy: state.filter.sortBy,
+		}
+	});
+
+	React.useEffect(() => {
+		dispatch(filterRobots(sortBy))
+	}, [sortBy])
 
 	const [burger, setBurger] = React.useState(false);
 	const [currentPage, setCurrentPage] = React.useState(1);
@@ -20,12 +30,16 @@ export const Market = (): JSX.Element => {
 
 	const handleClick = (page: number) => {
 		document.body.scroll(0, 300);
-		dispatch(setLoaded(false));
+		dispatch(setLoadedStatus(false));
 		setCurrentPage(page);
 		setTimeout(() => {
-			dispatch(setLoaded(true));
+			dispatch(setLoadedStatus(true));
 		}, 500);
 	};
+
+	const sortByFuction = (sorting: string) => {
+		dispatch(setSortBy(sorting));
+	}
 
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -43,7 +57,7 @@ export const Market = (): JSX.Element => {
 					<h2 className={styles.title}>Pieces List</h2>
 					<button className={`button ${styles.button_burger}`} onClick={() => setBurger(!burger)}>filter</button>
 				</div>
-				<Poput />
+				<Poput setSortBy={sortByFuction} sortBy={sortBy} />
 			</div>
 			<div className={`${styles.sidebar} ${burger ? styles.active : ''}`}>
 				<Sidebar closeBurger={() => setBurger(!burger)} />

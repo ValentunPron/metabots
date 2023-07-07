@@ -6,7 +6,10 @@
 			"age": 3892,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
 			"bodyPart": "Core",
-			"rarety": "Legendary",
+			"rarety": {
+				"status": 5,
+				"name": "Legendary"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 40,
@@ -23,7 +26,10 @@
 			"age": 389,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
 			"bodyPart": "Core",
-			"rarety": "Epic",
+			"rarety": {
+				"status": 4,
+				"name": "Epic"
+			},
 			"family": "Spider",
 			"status": {
 				"life": 30,
@@ -40,7 +46,10 @@
 			"age": 392,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/02.png",
 			"bodyPart": "Legs",
-			"rarety": "UnCommon",
+			"rarety": {
+				"status": 2,
+				"name": "UnCommon"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 10,
@@ -57,7 +66,10 @@
 			"age": 2,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
 			"bodyPart": "Right Arm",
-			"rarety": "Rare",
+			"rarety": {
+				"status": 3,
+				"name": "Rage"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 25,
@@ -74,7 +86,10 @@
 			"age": 2,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
 			"bodyPart": "Right Arm",
-			"rarety": "Rare",
+			"rarety": {
+				"status": 3,
+				"name": "Rage"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 20,
@@ -91,7 +106,10 @@
 			"age": 21,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/04.png",
 			"bodyPart": "Left Arm",
-			"rarety": "UnCommon",
+			"rarety": {
+				"status": 2,
+				"name": "UnCommon"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 30,
@@ -108,7 +126,10 @@
 			"age": 7221,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/05.png",
 			"bodyPart": "Right Arm",
-			"rarety": "Legendary",
+			"rarety": {
+				"status": 5,
+				"name": "Legendary"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 80,
@@ -125,7 +146,10 @@
 			"age": 600,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/06.png",
 			"bodyPart": "Legs",
-			"rarety": "Epic",
+			"rarety": {
+				"status": 4,
+				"name": "Epic"
+			},
 			"family": "Spider",
 			"status": {
 				"life": 70,
@@ -142,7 +166,10 @@
 			"age": 251,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/07.png",
 			"bodyPart": "Right Arm",
-			"rarety": "Common",
+			"rarety": {
+				"status": 1,
+				"name": "Common"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 20,
@@ -159,7 +186,10 @@
 			"age": 2241,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/08.png",
 			"bodyPart": "Legs",
-			"rarety": "Rare",
+			"rarety": {
+				"status": 3,
+				"name": "Rage"
+			},
 			"family": "Flying",
 			"status": {
 				"life": 30,
@@ -176,7 +206,10 @@
 			"age": 631,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/09.png",
 			"bodyPart": "Core",
-			"rarety": "UnCommon",
+			"rarety": {
+				"status": 2,
+				"name": "UnCommon"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 20,
@@ -193,7 +226,10 @@
 			"age": 1234,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/10.png",
 			"bodyPart": "Legs",
-			"rarety": "Epic",
+			"rarety": {
+				"status": 4,
+				"name": "Epic"
+			},
 			"family": "Flying",
 			"status": {
 				"life": 50,
@@ -210,7 +246,10 @@
 			"age": 1024,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/11.png",
 			"bodyPart": "Legs",
-			"rarety": "Rare",
+			"rarety": {
+				"status": 3,
+				"name": "Rage"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 100,
@@ -227,7 +266,10 @@
 			"age": 104,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/12.png",
 			"bodyPart": "Legs",
-			"rarety": "Rare",
+			"rarety": {
+				"status": 3,
+				"name": "Rage"
+			},
 			"family": "Spider",
 			"status": {
 				"life": 10,
@@ -244,7 +286,10 @@
 			"age": 4,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/13.png",
 			"bodyPart": "Right Arm",
-			"rarety": "Common",
+			"rarety": {
+				"status": 1,
+				"name": "Common"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 10,
@@ -261,7 +306,10 @@
 			"age": 4,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/14.png",
 			"bodyPart": "Left Arm",
-			"rarety": "Common",
+			"rarety": {
+				"status": 1,
+				"name": "Common"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 30,
@@ -278,7 +326,10 @@
 			"age": 213,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/15.png",
 			"bodyPart": "Left Arm",
-			"rarety": "Epic",
+			"rarety": {
+				"status": 4,
+				"name": "Epic"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 40,
@@ -295,7 +346,10 @@
 			"age": 21,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/16.png",
 			"bodyPart": "Core",
-			"rarety": "Legendary",
+			"rarety": {
+				"status": 5,
+				"name": "Legendary"
+			},
 			"family": "Humanoid",
 			"status": {
 				"life": 80,
