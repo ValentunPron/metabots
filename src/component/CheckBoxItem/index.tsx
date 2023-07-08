@@ -2,20 +2,27 @@ import React from 'react';
 
 import styles from './CheckBoxItem.module.scss';
 
-type IArrayItems = {
-	name: string;
-	value: string;
-};
-
 interface ICheckBoxItem {
 	title: string,
-	arrayItems: IArrayItems[],
+	arrayItems: string[],
 	children?: any,
+	setFilters?: Function,
+	filter?: string[];
 }
 
-export const CheckBoxItem = ({ title, arrayItems, children }: ICheckBoxItem): JSX.Element => {
+export const CheckBoxItem = ({ title, arrayItems, children, setFilters, filter }: ICheckBoxItem): JSX.Element => {
 
 	const [status, setStatus] = React.useState(false);
+
+	const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { value, checked } = event.target;
+		if (filter && setFilters) {
+			const updatedFilters = checked
+				? [...filter, value]
+				: filter.filter((filter: string) => filter !== value);
+			setFilters(updatedFilters);
+		}
+	};
 
 	return (
 		<div className={styles.filterItem}>
@@ -36,10 +43,18 @@ export const CheckBoxItem = ({ title, arrayItems, children }: ICheckBoxItem): JS
 					{
 						children
 							? children
-							: arrayItems.map((item) => (
-								<label className={styles.container} key={item.name}>
-									{item.name}
-									<input type="checkbox" value={item.value} />
+							: arrayItems.map((name) => (
+								<label className={styles.container} key={name}>
+									{name}
+									{
+										setFilters && filter
+											? <input
+												type="checkbox" value={name}
+												checked={filter.includes(name)}
+												onChange={handleCheckboxChange}
+											/>
+											: <input type='checkbox' value={name} />
+									}
 									<span className={styles.checkmark}></span>
 								</label>
 							))

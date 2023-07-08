@@ -3,7 +3,20 @@ import React from 'react';
 import styles from './Sidebar.module.scss';
 import { Filter } from '../Filter';
 
-export const Sidebar = ({ closeBurger }: any): JSX.Element => {
+interface ISidebar {
+	closeBurger: () => void,
+	setFilterRarery: Function,
+	setFilterPart: Function,
+	setFilterFamily: Function,
+	resetFilter: Function,
+	filters: {
+		part: string[] | [],
+		rarety: string[] | [],
+		family: string[] | []
+	}
+}
+
+export const Sidebar = ({ closeBurger, setFilterRarery, setFilterPart, setFilterFamily, resetFilter, filters }: ISidebar): JSX.Element => {
 
 	return (
 		<nav className={styles.sidebar}>
@@ -14,7 +27,7 @@ export const Sidebar = ({ closeBurger }: any): JSX.Element => {
 			</div>
 			<div className={styles.sidebar_content}>
 				<div className={`${styles.reset} reset`}>
-					<button>Reset</button>
+					<button onClick={() => resetFilter()}>Reset</button>
 				</div>
 				<div className={styles.search}>
 					<button>
@@ -29,7 +42,11 @@ export const Sidebar = ({ closeBurger }: any): JSX.Element => {
 					<div className={styles.search_item}>Meda Attack X</div>
 				</div>
 				<div className="sidebar_filter">
-					<Filter />
+					<Filter
+						setFilterRarery={setFilterRarery}
+						setFilterPart={setFilterPart}
+						setFilterFamily={setFilterFamily}
+						filters={filters} />
 				</div>
 			</div>
 		</nav>

@@ -68,7 +68,7 @@
 			"bodyPart": "Right Arm",
 			"rarety": {
 				"status": 3,
-				"name": "Rage"
+				"name": "Rare"
 			},
 			"family": "Humanoid",
 			"status": {
@@ -88,7 +88,7 @@
 			"bodyPart": "Right Arm",
 			"rarety": {
 				"status": 3,
-				"name": "Rage"
+				"name": "Rare"
 			},
 			"family": "Humanoid",
 			"status": {
@@ -188,7 +188,7 @@
 			"bodyPart": "Legs",
 			"rarety": {
 				"status": 3,
-				"name": "Rage"
+				"name": "Rare"
 			},
 			"family": "Flying",
 			"status": {
@@ -205,7 +205,7 @@
 			"name": "Uronus",
 			"age": 631,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/09.png",
-			"bodyPart": "Core",
+			"bodyPart": "Legs",
 			"rarety": {
 				"status": 2,
 				"name": "UnCommon"
@@ -248,7 +248,7 @@
 			"bodyPart": "Legs",
 			"rarety": {
 				"status": 3,
-				"name": "Rage"
+				"name": "Rare"
 			},
 			"family": "Humanoid",
 			"status": {
@@ -262,13 +262,13 @@
 		},
 		{
 			"id": 13,
-			"name": "Legs",
+			"name": "Legs Spider",
 			"age": 104,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/12.png",
 			"bodyPart": "Legs",
 			"rarety": {
 				"status": 3,
-				"name": "Rage"
+				"name": "Rare"
 			},
 			"family": "Spider",
 			"status": {

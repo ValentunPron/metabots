@@ -7,22 +7,24 @@ import { Card, CardLoader, Poput } from '../../component';
 import notFound from '../../assest/image/market/no_founded.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
-import { setSortBy } from '../../redux/slices/filter';
+import { resetFilters, setFiltersFamily, setFiltersPart, setFiltersRarety, setSortBy } from '../../redux/slices/filter';
 import { filterRobots, setLoadedStatus } from '../../redux/slices/robots';
 
 export const Market = (): JSX.Element => {
 
 	const dispatch: Function = useDispatch();
-	const { robots, sortBy } = useSelector((state: any) => {
+	const { robots, sortBy, filters } = useSelector((state: any) => {
 		return {
 			robots: state.robots.robots,
 			sortBy: state.filter.sortBy,
+			filters: state.filter.filters
 		}
 	});
 
 	React.useEffect(() => {
-		dispatch(filterRobots(sortBy))
-	}, [sortBy])
+		dispatch(filterRobots(sortBy));
+		console.log(filters);
+	}, [sortBy, filters])
 
 	const [burger, setBurger] = React.useState(false);
 	const [currentPage, setCurrentPage] = React.useState(1);
@@ -37,8 +39,24 @@ export const Market = (): JSX.Element => {
 		}, 500);
 	};
 
-	const sortByFuction = (sorting: string) => {
+	const sortByFunction = (sorting: string) => {
 		dispatch(setSortBy(sorting));
+	}
+
+	const filterRaretyFunction = (array: string[]) => {
+		dispatch(setFiltersRarety(array));
+	}
+
+	const filterPartFunction = (array: string[]) => {
+		dispatch(setFiltersPart(array));
+	}
+
+	const filterFamilyFunction = (array: string[]) => {
+		dispatch(setFiltersFamily(array));
+	}
+
+	const resetFilterFunction = () => {
+		dispatch(resetFilters());
 	}
 
 	const indexOfLastItem = currentPage * itemsPerPage;
@@ -57,10 +75,16 @@ export const Market = (): JSX.Element => {
 					<h2 className={styles.title}>Pieces List</h2>
 					<button className={`button ${styles.button_burger}`} onClick={() => setBurger(!burger)}>filter</button>
 				</div>
-				<Poput setSortBy={sortByFuction} sortBy={sortBy} />
+				<Poput setSortBy={sortByFunction} sortBy={sortBy} />
 			</div>
 			<div className={`${styles.sidebar} ${burger ? styles.active : ''}`}>
-				<Sidebar closeBurger={() => setBurger(!burger)} />
+				<Sidebar
+					closeBurger={() => setBurger(!burger)}
+					setFilterRarery={filterRaretyFunction}
+					setFilterPart={filterPartFunction}
+					setFilterFamily={filterFamilyFunction}
+					resetFilter={resetFilterFunction}
+					filters={filters} />
 			</div>
 			<div className={styles.main}>
 				<div className={styles.result}>{robots.items.length} result</div>

@@ -11,16 +11,27 @@ import iconFilter02 from '../../assest/image/filter/02.svg'
 import iconFilter03 from '../../assest/image/filter/03.svg'
 import iconFilter04 from '../../assest/image/filter/04.svg'
 
-export const Filter = (): JSX.Element => {
+interface IFilter {
+	setFilterRarery: Function,
+	setFilterPart: Function,
+	setFilterFamily: Function,
+	filters: {
+		part: string[] | [],
+		rarety: string[] | [],
+		family: string[] | []
+	}
+}
+
+export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, filters }: IFilter): JSX.Element => {
 
 	const [statusRobot, setStatusRobot] = React.useState(false);
 	const [statusStats, setStatusStats] = React.useState(false);
 
 	return (
 		<>
-			<CheckBoxItem title='Body Part' arrayItems={[{ name: 'All', value: 'all' }, { name: 'Core', value: 'core' }, { name: 'Right Arm', value: 'right_arm' }, { name: 'Left Arm', value: 'left_arm' }, { name: 'Legs', value: 'legs' }]} />
-			<CheckBoxItem title='Rarety' arrayItems={[{ name: 'Common', value: 'common' }, { name: 'UnCommon', value: 'uncommon' }, { name: 'Rare', value: 'rage' }, { name: 'Epic', value: 'epic' }, { name: 'Legendary', value: 'legendary' }]} />
-			<CheckBoxItem title='Family' arrayItems={[{ name: 'Humanoid', value: 'humanoid' }, { name: 'Spider', value: 'spider' }, { name: 'Flying', value: 'flying' }]} />
+			<CheckBoxItem title='Body Part' setFilters={setFilterPart} filter={filters.part} arrayItems={['Core', 'Right Arm', 'Left Arm', 'Legs']} />
+			<CheckBoxItem title='Rarety' setFilters={setFilterRarery} filter={filters.rarety} arrayItems={['Common', 'UnCommon', 'Rare', 'Epic', 'Legendary']} />
+			<CheckBoxItem title='Family' setFilters={setFilterFamily} filter={filters.family} arrayItems={['Humanoid', 'Spider', 'Flying']} />
 			<div className={styles.filterItem}>
 				<div className={styles.filter_up}>
 					<h3 className={styles.title}>Robot</h3>

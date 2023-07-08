@@ -14,9 +14,19 @@ export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
 	return data.robots;
 });
 
-export const filterRobots = createAsyncThunk('robts/filterRobots', async (sortBy: string) => {
+export const filterRobots = createAsyncThunk('robts/filterRobots', async (sortBy: string, thunkApi: any) => {
+	const filters = thunkApi.getState().filter.filters;
 	const data = await axios('./db.json').then(({ data }) => {
-		const totalData = data.robots;
+		let totalData: any = data.robots;
+		if (filters.rarety.length !== 0) {
+			totalData = totalData.filter((robot: IRobot) => filters.rarety.includes(robot.rarety.name));
+		}
+		if (filters.part.length !== 0) {
+			totalData = totalData.filter((robot: IRobot) => filters.part.includes(robot.bodyPart));
+		}
+		if (filters.family.length !== 0) {
+			totalData = totalData.filter((robot: IRobot) => filters.family.includes(robot.family));
+		}
 		switch (sortBy) {
 			case 'last listre': return totalData;
 			case 'price': return totalData.sort((robot1: IRobot, robot2: IRobot) => robot2.price - robot1.price);
