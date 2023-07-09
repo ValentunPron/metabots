@@ -12,10 +12,9 @@ export const Footer = () => {
 					<div className={styles.footer_top}>
 						<nav className={styles.footer_list}>
 							<Link className={styles.footer_link} to=''><img src={logo} alt="logo" width={24} height={24} /></Link>
-							<Link className={`${styles.footer_link} link`} to="/">Terms & Conditions</Link>
-							<Link className={`${styles.footer_link} link`} to="/">Privacy Policy</Link>
-							<Link className={`${styles.footer_link} link`} to="/">FAQ</Link>
-							<Link className={`${styles.footer_link} link`} to="/">Whitepaper</Link>
+							<Link className={`${styles.footer_link} link`} to="/terms-corditions">Terms & Conditions</Link>
+							<Link className={`${styles.footer_link} link`} to="/policy">Privacy Policy</Link>
+							<a className={`${styles.footer_link} link`} href='https://bitcoin.org/bitcoin.pdf' target='_blank'>Whitepaper</a>
 							<Link className={`${styles.footer_link} link`} to="/">Team</Link>
 						</nav>
 						<nav className={styles.footer_social}>

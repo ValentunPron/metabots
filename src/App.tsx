@@ -1,17 +1,11 @@
 import React from 'react';
 import { Footer, Header, RobotPages } from './component';
-import { Market } from './pages';
+import { Error, Market, Policy, TermsCorditions } from './pages';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchRobots } from './redux/slices/robots';
 
 
 function App() {
-  const dispatch: Function = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(fetchRobots());
-  }, [])
 
   return (
     <div className="wrapper">
@@ -21,8 +15,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Market />} />
             <Route path='/robot/:id' element={<RobotPages />} />
+            <Route path='/terms-corditions' element={<TermsCorditions />} />
+            <Route path='/policy' element={<Policy />} />
 
-            <Route path='*' element={<Market />} />
+            <Route path='*' element={<Error />} />
           </Routes>
         </div>
       </main>

@@ -101,6 +101,7 @@ export const Market = (): JSX.Element => {
 					setNoSlider={noSliderFunction}
 					resetFilter={resetFilterFunction}
 					robots={robots.items}
+					noSlider={noSlider}
 					filters={filters} />
 			</div>
 			<div className={styles.main}>

@@ -17,7 +17,7 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 	}, [])
 
 	if (!currentItem) {
-		return <Navigate to='/notFound' />
+		return <Navigate to='/' />
 	}
 
 	return (
@@ -42,7 +42,7 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 				</Link>
 				<div className={styles.robot_body}>
 					<div className={styles.robot_body_top}>
-						<div className={`${styles.robot_image} ${currentItem.rarety}`}>
+						<div className={`${styles.robot_image} ${currentItem.rarety.name}`}>
 							<img src={currentItem.img} alt={currentItem.name} />
 						</div>
 						<div className={styles.robot_info}>

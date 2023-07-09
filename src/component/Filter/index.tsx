@@ -11,6 +11,7 @@ import iconFilter02 from '../../assest/image/filter/02.svg'
 import iconFilter03 from '../../assest/image/filter/03.svg'
 import iconFilter04 from '../../assest/image/filter/04.svg'
 import { IRobot } from '../../types/IRobot';
+import { IFliters, INoSlider } from '../../redux/slices/filter';
 
 interface IFilter {
 	setFilterRarery: Function,
@@ -19,15 +20,11 @@ interface IFilter {
 	selectRobot: Function,
 	setNoSlider: Function,
 	robots: IRobot[],
-	filters: {
-		part: string[],
-		rarety: string[],
-		family: string[],
-		select: string[]
-	}
+	filters: IFliters,
+	noSlider: INoSlider,
 }
 
-export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, selectRobot, setNoSlider, robots, filters }: IFilter): JSX.Element => {
+export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, selectRobot, setNoSlider, robots, filters, noSlider }: IFilter): JSX.Element => {
 
 	const [statusRobot, setStatusRobot] = React.useState(false);
 	const [statusStats, setStatusStats] = React.useState(false);
@@ -98,16 +95,16 @@ export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, select
 				</div>
 				<div className={`${styles.filter_content} ${statusStats ? styles.active : ''}`}>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter01} title={'Life'} setNoSlider={setNoSlider} />
+						<NoSlider svgElement={iconFilter01} title={'Life'} value={noSlider.life} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter02} title={'Attack'} setNoSlider={setNoSlider} />
+						<NoSlider svgElement={iconFilter02} title={'Attack'} value={noSlider.attack} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter03} title={'Defense'} setNoSlider={setNoSlider} />
+						<NoSlider svgElement={iconFilter03} title={'Defense'} value={noSlider.defense} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter04} title={'Speed'} setNoSlider={setNoSlider} />
+						<NoSlider svgElement={iconFilter04} title={'Speed'} value={noSlider.speed} setNoSlider={setNoSlider} />
 					</div>
 				</div>
 			</div>

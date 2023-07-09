@@ -3,21 +3,23 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 export const setNoSlider = createAction<{ status: number[], name: string }>('filter/setNoSlider');
 
-interface INoSlider {
+export interface INoSlider {
   life: number[];
   attack: number[];
   defense: number[];
   speed: number[];
 }
 
+export interface IFliters {
+  part: string[];
+  rarety: string[];
+  family: string[];
+  select: string[];
+}
+
 export interface IFilterState {
   sortBy: string;
-  filters: {
-    part: string[];
-    rarety: string[];
-    family: string[];
-    select: string[];
-  },
+  filters: IFliters,
   search: string,
   noSlider: INoSlider,
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './Sidebar.module.scss';
 import { Filter } from '../Filter';
 import { IRobot } from '../../types/IRobot';
+import { IFliters, INoSlider } from '../../redux/slices/filter';
 
 interface ISidebar {
 	closeBurger: () => void,
@@ -14,15 +15,11 @@ interface ISidebar {
 	setNoSlider: Function,
 	resetFilter: Function,
 	robots: IRobot[],
-	filters: {
-		part: string[],
-		rarety: string[],
-		family: string[],
-		select: string[]
-	}
+	filters: IFliters,
+	noSlider: INoSlider,
 }
 
-export const Sidebar = ({ closeBurger, setFilterRarery, setFilterPart, setFilterFamily, selectRobot, setSearch, setNoSlider, resetFilter, robots, filters }: ISidebar): JSX.Element => {
+export const Sidebar = ({ closeBurger, setFilterRarery, setFilterPart, setFilterFamily, selectRobot, setSearch, setNoSlider, resetFilter, robots, noSlider, filters }: ISidebar): JSX.Element => {
 
 	const [searchText, setSearchText] = React.useState('');
 
@@ -54,7 +51,9 @@ export const Sidebar = ({ closeBurger, setFilterRarery, setFilterPart, setFilter
 						selectRobot={selectRobot}
 						setNoSlider={setNoSlider}
 						robots={robots}
-						filters={filters} />
+						filters={filters}
+						noSlider={noSlider}
+					/>
 				</div>
 			</div>
 		</nav>
