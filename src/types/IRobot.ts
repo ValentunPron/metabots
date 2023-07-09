@@ -12,7 +12,7 @@ export interface IRobot {
 	status: {
 		life: number,
 		attack: number,
-		deffense: number,
+		defense: number,
 		speed: number,
 	}
 	price: number,

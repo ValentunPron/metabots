@@ -7,18 +7,19 @@ import styles from './NoSlider.module.scss';
 interface INoSlider {
 	svgElement: any,
 	title: string,
+	setNoSlider: Function,
 }
 
-export const NoSlider = ({ svgElement, title }: INoSlider) => {
+export const NoSlider = ({ svgElement, title, setNoSlider }: INoSlider) => {
 	const formatTooltip = (value: number) => {
 		const intValue = Math.floor(Number(value));
 		return intValue.toString();
 	};
 
-	const [value, setValue] = React.useState([0, 20]);
+	const [value, setValue] = React.useState<number[]>([0, 100]);
 
 	const handleSliderChange = (values: number[]) => {
-		setValue(values);
+		setNoSlider(values, title)
 	};
 
 	const handleInputChange1 = (e: any) => {

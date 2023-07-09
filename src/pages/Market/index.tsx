@@ -7,24 +7,25 @@ import { Card, CardLoader, Poput } from '../../component';
 import notFound from '../../assest/image/market/no_founded.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
-import { resetFilters, setFiltersFamily, setFiltersPart, setFiltersRarety, setSortBy } from '../../redux/slices/filter';
+import { resetFilters, selectRobot, setFiltersFamily, setFiltersPart, setFiltersRarety, setNoSlider, setSearch, setSortBy } from '../../redux/slices/filter';
 import { filterRobots, setLoadedStatus } from '../../redux/slices/robots';
 
 export const Market = (): JSX.Element => {
 
 	const dispatch: Function = useDispatch();
-	const { robots, sortBy, filters } = useSelector((state: any) => {
+	const { robots, sortBy, filters, search, noSlider } = useSelector((state: any) => {
 		return {
 			robots: state.robots.robots,
 			sortBy: state.filter.sortBy,
-			filters: state.filter.filters
+			filters: state.filter.filters,
+			search: state.filter.search,
+			noSlider: state.filter.noSlider,
 		}
 	});
 
 	React.useEffect(() => {
 		dispatch(filterRobots(sortBy));
-		console.log(filters);
-	}, [sortBy, filters])
+	}, [sortBy, filters, search, noSlider])
 
 	const [burger, setBurger] = React.useState(false);
 	const [currentPage, setCurrentPage] = React.useState(1);
@@ -55,6 +56,18 @@ export const Market = (): JSX.Element => {
 		dispatch(setFiltersFamily(array));
 	}
 
+	const selectRobotFunction = (array: string[]) => {
+		dispatch(selectRobot(array));
+	}
+
+	const searchFunction = (name: string) => {
+		dispatch(setSearch(name));
+	}
+
+	const noSliderFunction = (status: number[], name: string) => {
+		dispatch(setNoSlider({ status, name }));
+	}
+
 	const resetFilterFunction = () => {
 		dispatch(resetFilters());
 	}
@@ -83,7 +96,11 @@ export const Market = (): JSX.Element => {
 					setFilterRarery={filterRaretyFunction}
 					setFilterPart={filterPartFunction}
 					setFilterFamily={filterFamilyFunction}
+					selectRobot={selectRobotFunction}
+					setSearch={searchFunction}
+					setNoSlider={noSliderFunction}
 					resetFilter={resetFilterFunction}
+					robots={robots.items}
 					filters={filters} />
 			</div>
 			<div className={styles.main}>
@@ -101,11 +118,15 @@ export const Market = (): JSX.Element => {
 										}
 									</div>
 									<div className={styles.next_robots}>
-										{pageNumbers.map((number) => (
-											<button className={`${styles.next_pages} ${number === currentPage ? styles.active : ''}`} key={number} onClick={() => handleClick(number)}>
-												{number}
-											</button>
-										))}
+										{
+											pageNumbers.length > 1
+												? pageNumbers.map((number) => (
+													<button className={`${styles.next_pages} ${number === currentPage ? styles.active : ''}`} key={number} onClick={() => handleClick(number)}>
+														{number}
+													</button>
+												))
+												: ''
+										}
 									</div>
 								</>
 								: <div className={styles.notFound}>

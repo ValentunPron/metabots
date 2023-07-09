@@ -9,6 +9,42 @@ interface IRobotsState {
 	}
 }
 
+const filterByRarety = (data: IRobot[], raretyFilters: string[]): IRobot[] =>
+	data.filter((robot) => raretyFilters.includes(robot.rarety.name));
+
+const filterByPart = (data: IRobot[], partFilters: string[]): IRobot[] =>
+	data.filter((robot) => partFilters.includes(robot.bodyPart));
+
+const filterByFamily = (data: IRobot[], familyFilters: string[]): IRobot[] =>
+	data.filter((robot) => familyFilters.includes(robot.family));
+
+const filterBySelected = (data: IRobot[], selectFilters: string[]): IRobot[] =>
+	data.filter((robot) => selectFilters.includes(robot.name));
+
+const filterBySliderValues = (data: IRobot[], sliderValues: any): IRobot[] =>
+	data.filter(
+		(robot) =>
+			+sliderValues.life[0] <= robot.status.life &&
+			robot.status.life <= +sliderValues.life[1] &&
+			+sliderValues.attack[0] <= robot.status.attack &&
+			robot.status.attack <= +sliderValues.attack[1] &&
+			+sliderValues.defense[0] <= robot.status.defense &&
+			robot.status.defense <= +sliderValues.defense[1] &&
+			+sliderValues.speed[0] <= robot.status.speed &&
+			robot.status.speed <= +sliderValues.speed[1]
+	);
+
+const filterBySearch = (data: IRobot[], searchQuery: string): IRobot[] => {
+	const lowerCaseQuery = searchQuery.toLowerCase();
+	return data.filter(
+		(robot) =>
+			robot.name.toLowerCase().includes(lowerCaseQuery) ||
+			robot.family.toLowerCase().includes(lowerCaseQuery) ||
+			robot.rarety.name.toLowerCase().includes(lowerCaseQuery) ||
+			robot.bodyPart.toLowerCase().includes(lowerCaseQuery)
+	);
+};
+
 export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
 	const data = await axios('./db.json').then(({ data }) => data)
 	return data.robots;
@@ -16,25 +52,40 @@ export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
 
 export const filterRobots = createAsyncThunk('robts/filterRobots', async (sortBy: string, thunkApi: any) => {
 	const filters = thunkApi.getState().filter.filters;
+	const noSlider = thunkApi.getState().filter.noSlider;
+	const search = thunkApi.getState().filter.search;
+
 	const data = await axios('./db.json').then(({ data }) => {
-		let totalData: any = data.robots;
+		let totalData: IRobot[] = data.robots;
+
 		if (filters.rarety.length !== 0) {
-			totalData = totalData.filter((robot: IRobot) => filters.rarety.includes(robot.rarety.name));
+			totalData = filterByRarety(totalData, filters.rarety);
 		}
 		if (filters.part.length !== 0) {
-			totalData = totalData.filter((robot: IRobot) => filters.part.includes(robot.bodyPart));
+			totalData = filterByPart(totalData, filters.part);
 		}
 		if (filters.family.length !== 0) {
-			totalData = totalData.filter((robot: IRobot) => filters.family.includes(robot.family));
+			totalData = filterByFamily(totalData, filters.family);
 		}
+		if (filters.select.length !== 0) {
+			totalData = filterBySelected(totalData, filters.select);
+		}
+		if (noSlider.life && noSlider.attack && noSlider.defense && noSlider.speed) {
+			totalData = filterBySliderValues(totalData, noSlider);
+		}
+		if (search.length) {
+			totalData = filterBySearch(totalData, search);
+		}
+
 		switch (sortBy) {
 			case 'last listre': return totalData;
 			case 'price': return totalData.sort((robot1: IRobot, robot2: IRobot) => robot2.price - robot1.price);
 			case 'age': return totalData.sort((robot1: IRobot, robot2: IRobot) => robot2.age - robot1.age);
 			case 'rarety': return totalData.sort((robot1: IRobot, robot2: IRobot) => robot2.rarety.status - robot1.rarety.status);
-			default: return totalData
+			default: return totalData;
 		}
-	})
+	});
+
 	return data;
 });
 

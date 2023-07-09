@@ -87,8 +87,8 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 												</svg>
 												<span className={styles.stats_name}>DEFENCE</span>
 											</div>
-											<input className={styles.stats_linear} style={{ background: `linear-gradient(to right, #5846F9 0, #1E1F28 ${currentItem.status.deffense}%)` }} type='*' />
-											<span className={styles.stats_number}>{currentItem.status.deffense}</span>
+											<input className={styles.stats_linear} style={{ background: `linear-gradient(to right, #5846F9 0, #1E1F28 ${currentItem.status.defense}%)` }} type='*' />
+											<span className={styles.stats_number}>{currentItem.status.defense}</span>
 										</div>
 										<div className={styles.stats_item}>
 											<div className={`${styles.stats_info}  ${styles.spe}`}>
@@ -100,7 +100,7 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 												<span className={styles.stats_name}>Speed</span>
 											</div>
 											<input className={styles.stats_linear} style={{ background: `linear-gradient(to right, #F25AC9 0, #1E1F28 ${currentItem.status.speed}%)` }} type='*' />
-											<span className={styles.stats_number}>{currentItem.status.deffense}</span>
+											<span className={styles.stats_number}>{currentItem.status.defense}</span>
 										</div>
 									</div>
 								</CheckBoxItem>

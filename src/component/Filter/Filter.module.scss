@@ -6,21 +6,41 @@
 }
 
 .search_list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 5px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
 	.search_item {
 		display: inline-flex;
+		justify-content: center;
+		align-items: center;
 		color: #000;
 		padding: 6px 10px;
 		background: #2F9D9D;
 		font-size: 0.8rem;
 		line-height: 1.1;
+		transition: all 0.4s ease;
+		&:hover {
+			background: #207979;
+		}
+		&.active {
+			background: #045454;
+			color: #000;
+		}
 	}
 }
 
 .slider_item {
 	margin-top: 35px;
+}
+
+@media (max-width: 1024px) {
+	.search_list {
+		gap: 10px;
+		.search_item {
+			padding: 3px 5px;
+
+		}
+	}
 }
 
 @media (max-width: 780px) {

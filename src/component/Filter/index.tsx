@@ -10,22 +10,42 @@ import iconFilter01 from '../../assest/image/filter/01.svg'
 import iconFilter02 from '../../assest/image/filter/02.svg'
 import iconFilter03 from '../../assest/image/filter/03.svg'
 import iconFilter04 from '../../assest/image/filter/04.svg'
+import { IRobot } from '../../types/IRobot';
 
 interface IFilter {
 	setFilterRarery: Function,
 	setFilterPart: Function,
 	setFilterFamily: Function,
+	selectRobot: Function,
+	setNoSlider: Function,
+	robots: IRobot[],
 	filters: {
-		part: string[] | [],
-		rarety: string[] | [],
-		family: string[] | []
+		part: string[],
+		rarety: string[],
+		family: string[],
+		select: string[]
 	}
 }
 
-export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, filters }: IFilter): JSX.Element => {
+export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, selectRobot, setNoSlider, robots, filters }: IFilter): JSX.Element => {
 
 	const [statusRobot, setStatusRobot] = React.useState(false);
 	const [statusStats, setStatusStats] = React.useState(false);
+	const [selectedNames, setSelectedNames] = React.useState<string[]>([]);
+
+	const handleButtonClick = (name: string) => {
+		if (selectedNames.includes(name)) {
+			setSelectedNames(selectedNames.filter((n) => n !== name));
+		} else {
+			setSelectedNames([...selectedNames, name]);
+		}
+	};
+
+	React.useEffect(() => {
+		setSelectedNames([]);
+	}, [filters])
+
+	const uniqueNames = Array.from(new Set(robots.map((robot: IRobot) => robot.name)));
 
 	return (
 		<>
@@ -46,9 +66,20 @@ export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, filter
 					</button>
 				</div>
 				<div className={`${styles.filter_content} ${statusRobot ? styles.active : ''}`}>
-					<button className={`button ${style.button}`}>Select Robot</button>
+					<button className={`button ${style.button}`} onClick={() => selectRobot(selectedNames)}>Select Robot</button>
 					<div className={style.search_list}>
-						<button className={style.search_item}>Geisha</button>
+						{
+							robots
+								? uniqueNames.map((name: string) => (
+									<button
+										key={name}
+										onClick={() => handleButtonClick(name)}
+										className={`${style.search_item} ${selectedNames.includes(name) ? style.active : ''}`}>
+										{name}
+									</button>
+								))
+								: <button className={style.search_item}>Geisha</button>
+						}
 					</div>
 				</div>
 			</div>
@@ -67,16 +98,16 @@ export const Filter = ({ setFilterRarery, setFilterPart, setFilterFamily, filter
 				</div>
 				<div className={`${styles.filter_content} ${statusStats ? styles.active : ''}`}>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter01} title={'Life'} />
+						<NoSlider svgElement={iconFilter01} title={'Life'} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter02} title={'Attack'} />
+						<NoSlider svgElement={iconFilter02} title={'Attack'} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter03} title={'Defense'} />
+						<NoSlider svgElement={iconFilter03} title={'Defense'} setNoSlider={setNoSlider} />
 					</div>
 					<div className={style.slider_item}>
-						<NoSlider svgElement={iconFilter04} title={'Speed'} />
+						<NoSlider svgElement={iconFilter04} title={'Speed'} setNoSlider={setNoSlider} />
 					</div>
 				</div>
 			</div>

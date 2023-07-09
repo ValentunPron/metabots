@@ -40,8 +40,8 @@ export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, pri
 					</div>
 					<div className={`${styles.card_skill} ${styles.def}`}>
 						<span className={styles.skill_name}>DEF.</span>
-						<input className={styles.skill_info} style={{ background: `linear-gradient(to right, #5846F9 0, #1E1F28 ${status.deffense}%)` }} type='*' />
-						<span className={styles.skill_number}>{status.deffense}</span>
+						<input className={styles.skill_info} style={{ background: `linear-gradient(to right, #5846F9 0, #1E1F28 ${status.defense}%)` }} type='*' />
+						<span className={styles.skill_number}>{status.defense}</span>
 					</div>
 					<div className={`${styles.card_skill} ${styles.spe}`}>
 						<span className={styles.skill_name}>SPE.</span>
