@@ -15,7 +15,7 @@ export const Footer = () => {
 							<Link className={`${styles.footer_link} link`} to="/terms-corditions">Terms & Conditions</Link>
 							<Link className={`${styles.footer_link} link`} to="/policy">Privacy Policy</Link>
 							<a className={`${styles.footer_link} link`} href='https://bitcoin.org/bitcoin.pdf' target='_blank'>Whitepaper</a>
-							<Link className={`${styles.footer_link} link`} to="/">Team</Link>
+							<Link className={`${styles.footer_link} link`} to="/team">Team</Link>
 						</nav>
 						<nav className={styles.footer_social}>
 							<a className={styles.footer_social_link} href="https://twitter.com/">

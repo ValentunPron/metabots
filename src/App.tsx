@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer, Header, RobotPages } from './component';
-import { Error, Market, Policy, TermsCorditions } from './pages';
+import { Error, Market, Policy, Team, TermsCorditions } from './pages';
 import { Route, Routes } from 'react-router-dom';
 
 
@@ -17,6 +17,7 @@ function App() {
             <Route path='/robot/:id' element={<RobotPages />} />
             <Route path='/terms-corditions' element={<TermsCorditions />} />
             <Route path='/policy' element={<Policy />} />
+            <Route path='/team' element={<Team />} />
 
             <Route path='*' element={<Error />} />
           </Routes>
