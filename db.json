@@ -14,7 +14,7 @@
 			"status": {
 				"life": 40,
 				"attack": 65,
-				"deffense": 70,
+				"defense": 70,
 				"speed": 50
 			},
 			"price": 2,
@@ -34,7 +34,7 @@
 			"status": {
 				"life": 30,
 				"attack": 55,
-				"deffense": 50,
+				"defense": 50,
 				"speed": 70
 			},
 			"price": 1,
@@ -54,7 +54,7 @@
 			"status": {
 				"life": 10,
 				"attack": 15,
-				"deffense": 20,
+				"defense": 20,
 				"speed": 20
 			},
 			"price": 1,
@@ -74,7 +74,7 @@
 			"status": {
 				"life": 25,
 				"attack": 25,
-				"deffense": 10,
+				"defense": 10,
 				"speed": 10
 			},
 			"price": 10,
@@ -94,7 +94,7 @@
 			"status": {
 				"life": 20,
 				"attack": 35,
-				"deffense": 10,
+				"defense": 10,
 				"speed": 10
 			},
 			"price": 6,
@@ -114,7 +114,7 @@
 			"status": {
 				"life": 30,
 				"attack": 55,
-				"deffense": 40,
+				"defense": 40,
 				"speed": 40
 			},
 			"price": 16,
@@ -134,7 +134,7 @@
 			"status": {
 				"life": 80,
 				"attack": 65,
-				"deffense": 50,
+				"defense": 50,
 				"speed": 40
 			},
 			"price": 16,
@@ -154,7 +154,7 @@
 			"status": {
 				"life": 70,
 				"attack": 55,
-				"deffense": 60,
+				"defense": 60,
 				"speed": 60
 			},
 			"price": 10,
@@ -174,7 +174,7 @@
 			"status": {
 				"life": 20,
 				"attack": 15,
-				"deffense": 30,
+				"defense": 30,
 				"speed": 20
 			},
 			"price": 4,
@@ -194,7 +194,7 @@
 			"status": {
 				"life": 30,
 				"attack": 25,
-				"deffense": 35,
+				"defense": 35,
 				"speed": 25
 			},
 			"price": 10,
@@ -214,7 +214,7 @@
 			"status": {
 				"life": 20,
 				"attack": 15,
-				"deffense": 25,
+				"defense": 25,
 				"speed": 20
 			},
 			"price": 6,
@@ -234,7 +234,7 @@
 			"status": {
 				"life": 50,
 				"attack": 30,
-				"deffense": 40,
+				"defense": 40,
 				"speed": 100
 			},
 			"price": 10,
@@ -254,7 +254,7 @@
 			"status": {
 				"life": 100,
 				"attack": 10,
-				"deffense": 100,
+				"defense": 100,
 				"speed": 10
 			},
 			"price": 40,
@@ -274,7 +274,7 @@
 			"status": {
 				"life": 10,
 				"attack": 30,
-				"deffense": 50,
+				"defense": 50,
 				"speed": 60
 			},
 			"price": 10,
@@ -294,7 +294,7 @@
 			"status": {
 				"life": 10,
 				"attack": 15,
-				"deffense": 30,
+				"defense": 30,
 				"speed": 20
 			},
 			"price": 3,
@@ -314,7 +314,7 @@
 			"status": {
 				"life": 30,
 				"attack": 10,
-				"deffense": 10,
+				"defense": 10,
 				"speed": 20
 			},
 			"price": 4,
@@ -334,7 +334,7 @@
 			"status": {
 				"life": 40,
 				"attack": 30,
-				"deffense": 40,
+				"defense": 40,
 				"speed": 30
 			},
 			"price": 40,
@@ -354,7 +354,7 @@
 			"status": {
 				"life": 80,
 				"attack": 70,
-				"deffense": 80,
+				"defense": 80,
 				"speed": 20
 			},
 			"price": 560,
