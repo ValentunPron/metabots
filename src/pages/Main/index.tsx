@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Main.module.scss'
 
 export const Main = (): JSX.Element => {
@@ -21,6 +22,9 @@ export const Main = (): JSX.Element => {
 				<h2 className={styles.title}>Welcome to Medabots</h2>
 				<p className={styles.text}>Build your own Medabots and participate in worldwide tournaments of Medabattles. Use your deck of cards to command your robots in strategic PVP and PVE combats and earn the most exclusive robot parts to build the ultimate Medabot team.</p>
 				<p className={styles.text}>Come and discover the Medabots Universe!</p>
+				<Link to='/market'>
+					<button className={styles.button}>Go to market</button>
+				</Link>
 			</div>
 			<div className={styles.family}>
 				<ul className={styles.family_list}>

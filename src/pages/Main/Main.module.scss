@@ -54,6 +54,37 @@
 	.text + .text {
 		margin-top: 10px;
 	}
+	
+	.button {
+		position: relative;
+		margin-top: 30px;
+		padding: 10px 20px;
+		background-image: linear-gradient(to right, #0a608f 40%, #0a99ba 100%);
+		color: #e1e1e1;
+		font-size: 1.5rem;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		transition: all 0.3s ease;
+		&::after {
+			border-radius: inherit;
+			background-image: linear-gradient(to left, #0a608f 30%, #3999af 100%);
+			content: '';    
+			display: block;
+			height: 100%;
+			position: absolute;
+			top: 0; 
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			z-index: -100;
+			transition: opacity .3s;
+		}
+		&:hover {
+			transform: translateY(-5px);
+		}
+		&:hover::after {
+			opacity: 1;
+		}
+	}
 }
 
 .family {
@@ -61,7 +92,7 @@
 	display: flex;
 	gap: 50px;
 	align-items: center;
-	margin-top: 70px;
+	margin-top: 100px;
 	margin-bottom: 50px;
 	.family_list {
 		display: flex;
@@ -169,7 +200,7 @@
 		&::after {
 			top: 20px;
 			height: 75%;
-			max-height: 400px;
+			max-height: 475px;
 		}
 		img {
 			&:hover {
@@ -247,8 +278,11 @@
 		margin-top: 40px;
 		&::after {
 			top: 10px;
-			height: 300px;
+			height: 340px;
 			background-position: 20%;
+		}
+		.icon {
+			max-width: 150px;
 		}
 		.mainTitle {
 			margin-top: 15px;
@@ -258,7 +292,7 @@
 			margin-top: 15px;
 			gap: 20px;
 			img {
-				width: calc((1vh + 1vw) * 15);
+				width: 85%;
 			}
 		}
 	}
@@ -266,7 +300,7 @@
 		.family_hero {
 			margin-top: 150px;
 			img {
-				width: calc((1vh + 1vw) * 25);
+				width: 55%;
 				min-width: 150px;
 			}
 			.hero1 {

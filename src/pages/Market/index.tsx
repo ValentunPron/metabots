@@ -27,6 +27,10 @@ export const Market = (): JSX.Element => {
 		dispatch(filterRobots(sortBy));
 	}, [sortBy, filters, search, noSlider])
 
+	React.useEffect(() => {
+		document.body.scrollTo(0, 175);
+	}, [])
+
 	const [burger, setBurger] = React.useState(false);
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const itemsPerPage = 6;
