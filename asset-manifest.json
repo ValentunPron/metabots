@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/metabots/static/css/main.2c61f3b7.css",
+    "main.css": "/metabots/static/css/main.ebcb6cd5.css",
     "main.js": "/metabots/static/js/main.10bfc982.js",
     "static/media/header-robot.png": "/metabots/static/media/header-robot.ffac51404c9ead5d633f.png",
     "static/media/no_founded.png": "/metabots/static/media/no_founded.98693700b88679f4e018.png",
@@ -11,11 +11,11 @@
     "index.html": "/metabots/index.html",
     "static/media/03.svg": "/metabots/static/media/03.ebf3451fac463fad9e9d04f8aa5c6d8a.svg",
     "static/media/02.svg": "/metabots/static/media/02.ea8cbb3fcd1de783872944bc6ff307ae.svg",
-    "main.2c61f3b7.css.map": "/metabots/static/css/main.2c61f3b7.css.map",
+    "main.ebcb6cd5.css.map": "/metabots/static/css/main.ebcb6cd5.css.map",
     "main.10bfc982.js.map": "/metabots/static/js/main.10bfc982.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c61f3b7.css",
+    "static/css/main.ebcb6cd5.css",
     "static/js/main.10bfc982.js"
   ]
 }
