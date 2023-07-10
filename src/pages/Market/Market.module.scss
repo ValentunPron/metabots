@@ -149,10 +149,9 @@
 	}
 
 	.sidebar {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: -100vw;
-		z-index: 10;
 		transition: all 0.4s ease;
 		z-index: 100;
 
@@ -160,9 +159,10 @@
 			background: linear-gradient(#063652 25%, #000f17 100%);
 			border: 1px solid #063652;
 			width: 60%;
-			height: auto;
-			padding: 50px 25px 0 25px;
+			height: 100%;
+			padding: 50px 25px 50px 25px;
 			left: 00px;
+			overflow-y: scroll;
 			top: 0;
 		}
 	}

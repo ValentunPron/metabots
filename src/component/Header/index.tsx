@@ -25,7 +25,7 @@ export const Header = (): JSX.Element => {
 					<nav className={styles.header__nav}>
 						<Link to="/" className={`link ${link === '' ? 'active' : ''}`}>Game</Link>
 						<Link to="/market" className={`link ${link.startsWith('market') ? 'active' : ''}`}>Market</Link>
-						<Link to="/medamon-mon" className={`link ${link === 'medamon-mon' ? 'active' : ''}`}>Medamon & Mon</Link>
+						<Link to="/terms-corditions" className={`link ${link === 'terms-corditions' ? 'active' : ''}`}>Medamon & Mon</Link>
 						{useLogin ? <Link to="/" className={`link ${link === 'profile' ? 'active' : ''}`}>Profile</Link> : ''}
 					</nav>
 					<div className={styles.active}>

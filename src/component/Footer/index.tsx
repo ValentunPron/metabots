@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const Footer = () => {
 
 	return (
-		<>
+		<div className='footer'>
 			<footer className={styles.footer}>
 				<div className="container">
 					<div className={styles.footer_top}>
@@ -59,6 +59,6 @@ export const Footer = () => {
 					<p>Copyright © 2022 Medabost. All rights reserved.</p>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
