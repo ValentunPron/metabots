@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 import logo from '../../assest/image/logo.png';
@@ -10,6 +10,10 @@ export const Header = (): JSX.Element => {
 	const [useLogin, setUseLogin] = React.useState(false);
 	const [burger, setBurger] = React.useState(false);
 
+	const location = useLocation();
+	const link = location.pathname.substring(1);
+	console.log(link);
+
 	return (
 		<header>
 			<div className="container">
@@ -19,10 +23,10 @@ export const Header = (): JSX.Element => {
 						Metabots
 					</Link>
 					<nav className={styles.header__nav}>
-						<Link to="/" className="link active">Game</Link>
-						<Link to="/" className="link">Market</Link>
-						<Link to="/" className="link">Medamon & Mon</Link>
-						{useLogin ? <Link to="/" className="link">Profile</Link> : ''}
+						<Link to="/" className={`link ${link === '' ? 'active' : ''}`}>Game</Link>
+						<Link to="/market" className={`link ${link.startsWith('market') ? 'active' : ''}`}>Market</Link>
+						<Link to="/medamon-mon" className={`link ${link === 'medamon-mon' ? 'active' : ''}`}>Medamon & Mon</Link>
+						{useLogin ? <Link to="/" className={`link ${link === 'profile' ? 'active' : ''}`}>Profile</Link> : ''}
 					</nav>
 					<div className={styles.active}>
 						{

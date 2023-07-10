@@ -1,0 +1,284 @@
+.body_up {
+	margin-top: 40px;
+	text-align: center;
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100vw; height: 600px;
+		top: -0px; right: 0;
+		background-image: url('https://medabots.game/wp-content/uploads/2022/01/fondo-slider1-scaled-1.png');
+		background-size: cover;
+		z-index: -1;
+	}
+	img {
+		transition: all 0.2s ease;
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+	.mainTitle {
+		margin-top: 30px;
+		font-size: 4rem;
+		line-height: 1.2;
+		letter-spacing: 6px;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+	}
+	.subtitle {
+		font-size: 1rem;
+		line-height: 1;
+		color: #666;
+	}
+	.action {
+		display: flex;
+		justify-content: center;
+		gap: 50px;
+		margin-top: 30px;
+	}
+}
+
+.welcome {
+	margin-top: 100px;
+	text-align: center;
+	.title {
+		font-size: 2em;
+		font-family: 'b Biger Over', system-ui, sans-serif;
+		margin-bottom: 20px;
+	}
+	.text {
+		font-size: 0.8rem;
+		line-height: 1.2;
+		margin: 0 auto;
+		max-width: 400px;
+		color: #666;
+	}
+	.text + .text {
+		margin-top: 10px;
+	}
+}
+
+.family {
+	position: relative;
+	display: flex;
+	gap: 50px;
+	align-items: center;
+	margin-top: 70px;
+	margin-bottom: 50px;
+	.family_list {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		max-width: 320px;
+		width: 100%;
+		padding: 50px 20px;
+		background-image: linear-gradient(110deg,rgba(1, 220, 254, 0.266) 0%,rgba(255,255,255,0) 74%);
+		border: 2px solid rgba(1,219,254,0.3);;
+	}
+	.list_item {
+		.title {
+			font-size: 1.2rem;
+			font-family: 'b Biger Over', system-ui, sans-serif;
+		}
+		.desc {
+			font-size: 0.85rem;
+			max-width: 250px;
+			margin-top: 10px;
+		}
+	}
+	.family_hero {
+		.hero1, .hero2 {
+			position: absolute;
+			left: 30%;
+			bottom: -20px;
+			transition: all 0.3s ease;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		.hero2 {
+			left: 50%;
+			top: -30px;
+			transform: rotate(5deg);
+		}
+		.hero3 {
+			position: absolute;
+			right: 0;
+			bottom: -20px;
+			transform: rotate(15deg);
+			transition: all 0.3s ease;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.family {
+		gap: 30px;
+		margin-top: 70px;
+		.family_list {
+			gap: 25px;
+			max-width: 250px;
+			width: 100%;
+			padding: 40px 15px;
+		}
+		.list_item {
+			.title {
+				font-size: 1.1rem;
+			}
+			.desc {
+				font-size: 0.75rem;
+				max-width: 200px;
+			}
+		}
+		.family_hero {
+			img {
+				width: 270px;
+			}
+			.hero1, .hero2 {
+				position: absolute;
+				left: 30%;
+				bottom: -20px;
+				transition: all 0.3s ease;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+			.hero2 {
+				left: 50%;
+				top: -30px;
+				transform: rotate(5deg);
+			}
+			.hero3 {
+				position: absolute;
+				right: 0;
+				bottom: -20px;
+				transform: rotate(15deg);
+				transition: all 0.3s ease;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 780px) {
+	.body_up {
+		margin-top: 50px;
+		&::after {
+			top: 20px;
+			height: 75%;
+			max-height: 400px;
+		}
+		img {
+			&:hover {
+				transform: translateY(0);
+			}
+		}
+		.icon {
+			width: calc((1vh + 1vw) * 20); height: auto;
+		}
+		.mainTitle {
+			margin-top: 20px;
+			font-size: 3rem;
+		}
+		.action {
+			margin-top: 20px;
+			gap: 40px;
+			img {
+				width: calc((1vh + 1vw) * 15);
+			}
+		}
+	}
+	.welcome {
+		margin-top: 60px;
+		.title {
+			font-size: 1.7rem;
+			margin-bottom: 10px;
+		}
+		.text {
+			font-size: 0.7rem;
+			max-width: 350px;
+		}
+		.text + .text {
+			margin-top: 5px;
+		}
+	}
+	.family {
+		flex-direction: column;
+		gap: 100px;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		.family_list {
+			gap: 25px;
+			max-width: none;
+			width: 100vw;
+			padding: 30px 15px;
+		}
+		.list_item {
+			.title {
+				font-size: 1.2rem;
+			}
+			.desc {
+				font-size: 0.85rem;
+				max-width: 300px;
+			}
+		}
+		.family_hero {
+			margin-top: 250px;
+			img {
+				width: calc((1vh + 1vw) * 25);
+				min-width: 180px;
+			}
+			.hero1 {
+				left: 0;
+			}
+			.hero2 {
+				top: 47.5%;
+				left: 30%;
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.body_up {
+		margin-top: 40px;
+		&::after {
+			top: 10px;
+			height: 300px;
+			background-position: 20%;
+		}
+		.mainTitle {
+			margin-top: 15px;
+			font-size: 2.5rem;
+		}
+		.action {
+			margin-top: 15px;
+			gap: 20px;
+			img {
+				width: calc((1vh + 1vw) * 15);
+			}
+		}
+	}
+	.family {
+		.family_hero {
+			margin-top: 150px;
+			img {
+				width: calc((1vh + 1vw) * 25);
+				min-width: 150px;
+			}
+			.hero1 {
+				left: 0;
+			}
+			.hero2 {
+				top: 50%;
+				left: 26%;
+			}
+			.hero3 {
+				right: -20px;
+			}
+		}
+	}
+}

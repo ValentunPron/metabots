@@ -28,7 +28,7 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 				<p className={styles.rarity}>Rarity: <span className={currentItem.rarety.name}>{currentItem.rarety.name}</span></p>
 			</div>
 			<div className={styles.robog_bg}>
-				<Link to='/'>
+				<Link to='/market'>
 					<button className={styles.return}>
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g id="DOWN ARROW">

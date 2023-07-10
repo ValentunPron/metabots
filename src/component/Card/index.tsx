@@ -18,7 +18,7 @@ export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, pri
 		<div className={`${styles.card} ${cardRarety[rarety.name]}`}>
 			<div className={styles.test}>
 				<div className={styles.card_top}>
-					<Link to={`/robot/${id}`}>
+					<Link to={`/market/${id}`}>
 						<img className={styles.image} src={img} alt={name} height={150} width={150} />
 					</Link>
 					<div className={styles.card_info}>
@@ -59,7 +59,7 @@ export const Card = ({ id, name, age, img, bodyPart, rarety, family, status, pri
 					<p className={styles.card_price}>{price}<span>[${realyPrice}]</span></p>
 				</div>
 				<div className={styles.card_active}>
-					<Link to={`/robot/${id}`}>
+					<Link to={`/market/${id}`}>
 						<button className='button'>Details</button>
 					</Link>
 					<button className='button trans'>Buy Now</button>
