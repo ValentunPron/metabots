@@ -112,6 +112,7 @@
 		}
 	}
 	.header__nav {
+		overflow-y: auto;
 		background: linear-gradient(#063652 25%, #000f17 100%);
 		width: 100vw; height: 100vh;
 		bottom: 0; left: 100vw;

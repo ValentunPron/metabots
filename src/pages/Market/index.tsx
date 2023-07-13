@@ -35,6 +35,10 @@ export const Market = (): JSX.Element => {
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const itemsPerPage = 6;
 
+	React.useEffect(() => {
+		burger ? document.body.classList.add('overflow') : document.body.classList.remove('overflow');
+	}, [burger])
+
 	const handleClick = (page: number) => {
 		document.body.scroll(0, 300);
 		dispatch(setLoadedStatus(false));

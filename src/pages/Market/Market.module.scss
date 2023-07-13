@@ -159,6 +159,7 @@
 			background: linear-gradient(#063652 25%, #000f17 100%);
 			border: 1px solid #063652;
 			width: 60%;
+			max-width: 380px;
 			height: 100%;
 			padding: 50px 25px 50px 25px;
 			left: 00px;
@@ -169,6 +170,7 @@
 
 	.button_burger {
 		display: block;
+		margin-left: 15px;
 	}
 
 	.market_top {
@@ -227,7 +229,7 @@
 
 	.sidebar {
 		&.active {
-			width: 80%;
+			width:	75%;
 			padding: 40px 20px 0 20px;
 			left: 00px;
 			top: 0;

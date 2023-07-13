@@ -8,5 +8,6 @@ import { Poput } from "./Poput";
 import { Sidebar } from "./Sidebar";
 import { CardLoader } from "./Card/CardLoader";
 import { RobotPages } from "./RobotPages";
+import { Modal } from "./Modal";
 
-export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer, CardLoader, RobotPages }
+export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer, CardLoader, RobotPages, Modal }
