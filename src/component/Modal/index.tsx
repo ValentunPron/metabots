@@ -8,12 +8,6 @@ interface IModal {
 
 export const Modal = ({ status, setStatus }: IModal): JSX.Element => {
 
-	const refModal = React.useRef(null);
-
-	if (refModal.current) {
-		console.log(refModal.current)
-	}
-
 	const handleOutsideClick = (event: any) => {
 		if (event.target.className === `${styles.modal} ${styles.active}`) {
 			setStatus(false);
@@ -23,7 +17,7 @@ export const Modal = ({ status, setStatus }: IModal): JSX.Element => {
 	React.useEffect(() => {
 		const handleKeyDown = (event: any) => {
 			if (event.keyCode === 27) {
-				setStatus();
+				setStatus(false);
 			}
 		};
 

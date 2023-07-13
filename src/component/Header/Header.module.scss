@@ -90,12 +90,13 @@
 			width: calc((1vh + 1vw) * 60);
 		}
 		.header__text {
-			max-width: 400px;
+			max-width: none;
 			left: calc((1vh + 1vw) * 3);
 			h1 {
 				font-size: calc((1vh + 1vw) * 3.25);
 			}
 			h2 {
+				max-width: 400px;
 				font-size: calc((1vh + 1vw) * 2);
 			}
 		}
