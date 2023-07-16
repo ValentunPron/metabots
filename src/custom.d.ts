@@ -13,4 +13,5 @@ declare module "*.png" {
 	export default content;
 }
 
+
 declare module "*.module.scss";

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios from '../../axios';
 import { IRobot } from '../../types/IRobot';
 
 interface IRobotsState {
@@ -45,18 +45,13 @@ const filterBySearch = (data: IRobot[], searchQuery: string): IRobot[] => {
 	);
 };
 
-export const fetchRobots = createAsyncThunk('robts/fetchRobots', async () => {
-	const data = await axios('./db.json').then(({ data }) => data)
-	return data.robots;
-});
-
-export const filterRobots = createAsyncThunk('robts/filterRobots', async (sortBy: string, thunkApi: any) => {
+export const fetchRobots = createAsyncThunk('robts/fetchRobots', async (sortBy: string, thunkApi: any) => {
 	const filters = thunkApi.getState().filter.filters;
 	const noSlider = thunkApi.getState().filter.noSlider;
 	const search = thunkApi.getState().filter.search;
 
-	const data = await axios('./db.json').then(({ data }) => {
-		let totalData: IRobot[] = data.robots;
+	const data = await axios.get('/card').then(({ data }) => {
+		let totalData: IRobot[] = data;
 
 		if (filters.rarety.length !== 0) {
 			totalData = filterByRarety(totalData, filters.rarety);
@@ -115,19 +110,7 @@ const robotsSlices = createSlice({
 				state.robots.items = action.payload;
 				state.robots.status = 'loaded';
 			})
-			.addCase(fetchRobots.rejected, (state) => {
-				state.robots.items = [];
-				state.robots.status = 'error';
-			})
-			.addCase(filterRobots.pending, (state) => {
-				state.robots.items = [];
-				state.robots.status = 'loading';
-			})
-			.addCase(filterRobots.fulfilled, (state, action) => {
-				state.robots.items = action.payload;
-				state.robots.status = 'loaded';
-			})
-			.addCase(filterRobots.rejected, (state) => {
+			.addCase(fetchRobots.rejected, (state, action) => {
 				state.robots.items = [];
 				state.robots.status = 'error';
 			});

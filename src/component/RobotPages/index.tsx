@@ -10,7 +10,7 @@ export const RobotPages = (): JSX.Element => {
 
 	const robots = useSelector((state: any) => state.robots.robots.items);
 
-	const currentItem = robots.filter((robot: IRobot) => String(robot.id) === String(params.id));
+	const currentItem = robots.filter((robot: IRobot) => String(robot._id) === String(params.id));
 
 	console.log(currentItem[0]);
 

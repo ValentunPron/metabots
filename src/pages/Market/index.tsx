@@ -8,7 +8,7 @@ import notFound from '../../assest/image/market/no_founded.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
 import { resetFilters, selectRobot, setFiltersFamily, setFiltersPart, setFiltersRarety, setNoSlider, setSearch, setSortBy } from '../../redux/slices/filter';
-import { filterRobots, setLoadedStatus } from '../../redux/slices/robots';
+import { fetchRobots, setLoadedStatus } from '../../redux/slices/robots';
 
 export const Market = (): JSX.Element => {
 
@@ -24,8 +24,8 @@ export const Market = (): JSX.Element => {
 	});
 
 	React.useEffect(() => {
-		dispatch(filterRobots(sortBy));
-	}, [sortBy, filters, search, noSlider])
+		dispatch(fetchRobots(sortBy));
+	}, [sortBy, filters, search, noSlider,])
 
 	React.useEffect(() => {
 		document.body.scrollTo(0, 175);
@@ -123,7 +123,7 @@ export const Market = (): JSX.Element => {
 								<>
 									<div className={styles.main_list}>
 										{
-											currentItems.map((robot: IRobot) => <Card {...robot} key={`${robot.id}_${robot.name}`} />)
+											currentItems.map((robot: IRobot) => <Card {...robot} key={`${robot._id}_${robot.name}`} />)
 										}
 									</div>
 									<div className={styles.next_robots}>
@@ -142,9 +142,14 @@ export const Market = (): JSX.Element => {
 									<img src={notFound} alt="not found" height={300} width={310} />
 									No  Pieces found
 								</div>
-							: <div className={styles.main_list}>
-								{Array(6).fill(<CardLoader />)}
-							</div>
+							: robots.status === 'error'
+								? <div className={styles.notFound}>
+									<img src={notFound} alt="not found" height={300} width={310} />
+									No  Pieces found
+								</div>
+								: <div className={styles.main_list}>
+									{Array(6).fill(<CardLoader />)}
+								</div>
 					}
 				</div>
 			</div>

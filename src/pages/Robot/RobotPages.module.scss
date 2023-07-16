@@ -1,9 +1,19 @@
 .robot_top {
 	position: relative;
 	display: flex;
-	align-items: center;
-	gap: 125px;
+	flex-direction: column;
+	gap: 20px;
 	padding-bottom: 40px;
+	.id {
+		font-size: 1.5rem;
+		span {
+			font-size: 1.3rem;
+		}
+	}
+	div {
+		display: flex;
+		justify-content: space-between;
+	}
 	.core {
 		font-size: 1.5rem;
 		font-family: 'b Biger Over', system-ui, sans-serif;

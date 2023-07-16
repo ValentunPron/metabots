@@ -1,8 +1,8 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Main.module.scss'
 
 export const Main = (): JSX.Element => {
-
 	return (
 		<>
 			<div className={styles.body_up}>

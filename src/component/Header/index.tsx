@@ -18,7 +18,6 @@ export const Header = (): JSX.Element => {
 
 	const location = useLocation();
 	const link = location.pathname.substring(1);
-	console.log(link);
 
 	return (
 		<>
@@ -42,11 +41,11 @@ export const Header = (): JSX.Element => {
 										<img src={logo} alt={logo} width={20} height={20} />
 										10000 MON
 									</div>*/}
-										<button className='button' onClick={() => setRegisterStatus(true)}>Logout</button>
+										<button className='button' onClick={() => setUseLogin(false)}>Logout</button>
 									</>
 									: <>
 										<div className={styles.button}>
-											<button className='login button' onClick={() => setUseLogin(true)}>
+											<button className='login button' onClick={() => setRegisterStatus(true)}>
 												<div>
 													Login
 													<svg width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">

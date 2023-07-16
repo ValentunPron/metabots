@@ -1,5 +1,5 @@
 export interface IRobot {
-	id: string,
+	_id: string,
 	name: string,
 	age: number,
 	img: string,
