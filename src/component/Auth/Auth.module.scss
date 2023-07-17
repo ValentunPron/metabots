@@ -16,13 +16,14 @@
 		opacity: 1;
 	}
 	.body {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-rows: auto 1fr;
 		position: relative;
 
 		background-color: #08090C;
 		border-radius: 12px;
-		width: 500px; height: 450px;
+		width: 500px; 
+		min-height: 440px; height: auto;
 		transition: all 0.4s ease;
 		.action {
 			display: flex;
@@ -109,6 +110,9 @@
 			display: flex;
 			flex-direction: column;
 			gap: 20px;
+			p {
+				font-size: 1rem;
+			}
 		}
 		input {
 			border: 1px solid rgba(69, 217, 252, 0.15);
@@ -127,6 +131,7 @@
 			}
 		}
 		.button {
+			margin-top: 20px;
 			width: 100%;
 			padding: 12.5px;
 			font-size: 1rem;
@@ -144,7 +149,8 @@
 @media (max-width: 780px) {
 	.wrapper {
 		.body {
-			width: 100vw; height: 100%;
+			width: 100vw;
+			height: 100%;
 			border-radius: 0px;
 			.action {
 				padding-top: 60px;

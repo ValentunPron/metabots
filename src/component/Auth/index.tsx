@@ -1,12 +1,14 @@
 import React from 'react'
-import styles from './Register.module.scss'
+import styles from './Auth.module.scss'
+import { Login } from './Login';
+import { Register } from './Register';
 
 interface IRegister {
 	status: boolean,
 	setStatus: Function,
 }
 
-export const Register = ({ status, setStatus }: IRegister): JSX.Element => {
+export const Auth = ({ status, setStatus }: IRegister): JSX.Element => {
 
 	const [login, setLogin] = React.useState<boolean>(false);
 
@@ -39,23 +41,7 @@ export const Register = ({ status, setStatus }: IRegister): JSX.Element => {
 					<button className={styles.close} onClick={() => setStatus(false)}><span></span></button>
 				</div>
 				{
-					login
-						? <form className={styles.form}>
-							<div className={styles.form_inputs}>
-								<input type="email" placeholder='Email' name='email_login' />
-								<input type="password" placeholder='Password' name='password_login' />
-							</div>
-							<button className={styles.button}>Login</button>
-						</form>
-						: <form className={styles.form}>
-							<div className={styles.form_inputs}>
-								<input type="text" placeholder='Full name' name='fullName' />
-								<input type="email" placeholder='Email' name='email' />
-								<input type="password" placeholder='Password' name='password' />
-								<input type="password" placeholder='Repeat password' name='repeatPassword' />
-							</div>
-							<button className={styles.button}>Register</button>
-						</form>
+					login ? <Login setStatus={setStatus} /> : <Register setStatus={setStatus} />
 				}
 			</div>
 		</div>

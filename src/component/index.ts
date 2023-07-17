@@ -9,6 +9,6 @@ import { Sidebar } from "./Sidebar";
 import { CardLoader } from "./Card/CardLoader";
 import { RobotPages } from "./RobotPages";
 import { Modal } from "./Modal";
-import { Register } from "./Register";
+import { Auth } from "./Auth";
 
-export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer, CardLoader, RobotPages, Modal, Register }
+export { Header, CheckBoxItem, Filter, NoSlider, Poput, Sidebar, Card, Footer, CardLoader, RobotPages, Modal, Auth }

@@ -4,7 +4,7 @@ import styles from './Header.module.scss'
 
 import logo from '../../assest/image/logo.png';
 import header_robot from '../../assest/image/header-robot.png'
-import { Register } from '../Register';
+import { Auth } from '../Auth';
 
 export const Header = (): JSX.Element => {
 
@@ -70,7 +70,7 @@ export const Header = (): JSX.Element => {
 					</div>
 				</div>
 			</header>
-			<Register status={registerStatus} setStatus={setRegisterStatus} />
+			<Auth status={registerStatus} setStatus={setRegisterStatus} />
 		</>
 	)
 }
