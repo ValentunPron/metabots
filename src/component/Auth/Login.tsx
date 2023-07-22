@@ -27,11 +27,9 @@ export const Login = ({ setStatus }: ILogin): JSX.Element => {
 		}
 
 		if ('token' in data.payload) {
-			alert(`Congratulations ${data.payload.fullName}`)
+			alert(`Hello ${data.payload.fullName}!`)
 			window.localStorage.setItem('token', data.payload.token);
-			setTimeout(() => {
-				setStatus(false);
-			}, 3333);
+			setStatus(false);
 		}
 	}
 

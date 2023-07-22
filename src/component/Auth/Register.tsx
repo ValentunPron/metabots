@@ -23,8 +23,8 @@ export const Register = ({ setStatus }: IRegister): JSX.Element => {
 		mode: 'onChange'
 	});
 
-	const onSubmit = (values: any) => {
-		const data = dispatch(fetchRegister(values));
+	const onSubmit = async (values: any) => {
+		const data = await dispatch(fetchRegister(values));
 		if (values.password !== values.repeatPassword) {
 			setCheckPassword(true);
 		} else {
@@ -32,6 +32,16 @@ export const Register = ({ setStatus }: IRegister): JSX.Element => {
 		}
 
 		console.log(data);
+
+		if (!data.payload) {
+			alert('An error occurred while register in!')
+		}
+
+		if (data.payload !== undefined && 'token' in data.payload) {
+			alert(`Congratulations ${data.payload.fullName}`)
+			window.localStorage.setItem('token', data.payload.token);
+			setStatus(false);
+		}
 	}
 
 	return (

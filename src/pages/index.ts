@@ -5,5 +5,6 @@ import { TermsCorditions } from "./TermsCorditions";
 import { Error } from "./Error";
 import { Team } from "./Team";
 import { Main } from "./Main";
+import { Cart } from "./Cart";
 
-export { Main, Market, Robot, Policy, TermsCorditions, Team, Error }
+export { Main, Market, Robot, Policy, TermsCorditions, Team, Error, Cart }

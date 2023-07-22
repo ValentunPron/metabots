@@ -69,6 +69,7 @@ const authSlices = createSlice({
 				state.status = 'error';
 			});
 	}
-});
+})
 
-export const authReducer = authSlices.reducer
+export const { logout } = authSlices.actions;
+export const authReducer = authSlices.reducer;

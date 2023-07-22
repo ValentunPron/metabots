@@ -214,6 +214,7 @@
 		img {
 			width: 100%;
 			height: auto;
+			max-height: 200px;
 		}
 	}
 	.card_bottom {
@@ -243,7 +244,7 @@
 		gap: 15px;
 		img {
 			min-width: 100px;
-			height: auto;
+			max-height: 150px;
 		}
 		.card_info {
 			gap: 7.5px;

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
 import { resetFilters, selectRobot, setFiltersFamily, setFiltersPart, setFiltersRarety, setNoSlider, setSearch, setSortBy } from '../../redux/slices/filter';
 import { fetchRobots, setLoadedStatus } from '../../redux/slices/robots';
+import { addRobot } from '../../redux/slices/cart';
 
 export const Market = (): JSX.Element => {
 
@@ -80,6 +81,10 @@ export const Market = (): JSX.Element => {
 		dispatch(resetFilters());
 	}
 
+	const addRobots = (robot: IRobot) => {
+		dispatch(addRobot(robot))
+	}
+
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 	const currentItems = robots.items.slice(indexOfFirstItem, indexOfLastItem);
@@ -123,7 +128,7 @@ export const Market = (): JSX.Element => {
 								<>
 									<div className={styles.main_list}>
 										{
-											currentItems.map((robot: IRobot) => <Card {...robot} key={`${robot._id}_${robot.name}`} />)
+											currentItems.map((robot: IRobot) => <Card currentItem={robot} key={`${robot._id}_${robot.name}`} addRobot={addRobots} />)
 										}
 									</div>
 									<div className={styles.next_robots}>
