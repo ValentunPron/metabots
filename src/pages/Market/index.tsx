@@ -9,18 +9,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
 import { resetFilters, selectRobot, setFiltersFamily, setFiltersPart, setFiltersRarety, setNoSlider, setSearch, setSortBy } from '../../redux/slices/filter';
 import { fetchRobots, setLoadedStatus } from '../../redux/slices/robots';
-import { addRobot } from '../../redux/slices/cart';
+import { buyCard, fetchCart } from '../../redux/slices/cart';
 
 export const Market = (): JSX.Element => {
 
 	const dispatch: Function = useDispatch();
-	const { robots, sortBy, filters, search, noSlider } = useSelector((state: any) => {
+	const { robots, sortBy, filters, search, noSlider, cart } = useSelector((state: any) => {
 		return {
 			robots: state.robots.robots,
 			sortBy: state.filter.sortBy,
 			filters: state.filter.filters,
 			search: state.filter.search,
 			noSlider: state.filter.noSlider,
+			cart: state.cart.items,
 		}
 	});
 
@@ -81,8 +82,8 @@ export const Market = (): JSX.Element => {
 		dispatch(resetFilters());
 	}
 
-	const addRobots = (robot: IRobot) => {
-		dispatch(addRobot(robot))
+	const addRobots = (robotId: string) => {
+		dispatch(buyCard(robotId));;
 	}
 
 	const indexOfLastItem = currentPage * itemsPerPage;
@@ -128,7 +129,7 @@ export const Market = (): JSX.Element => {
 								<>
 									<div className={styles.main_list}>
 										{
-											currentItems.map((robot: IRobot) => <Card currentItem={robot} key={`${robot._id}_${robot.name}`} addRobot={addRobots} />)
+											currentItems.map((robot: IRobot) => <Card currentItem={robot} cartCheck={cart} key={`${robot._id}_${robot.name}`} addRobot={addRobots} />)
 										}
 									</div>
 									<div className={styles.next_robots}>

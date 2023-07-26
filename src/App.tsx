@@ -4,6 +4,7 @@ import { Cart, Error, Main, Market, Policy, Team, TermsCorditions } from './page
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuthMe } from './redux/slices/auth';
+import { fetchCart } from './redux/slices/cart';
 
 function App() {
   const dispatch: Function = useDispatch();
@@ -16,7 +17,11 @@ function App() {
 
   React.useEffect(() => {
     dispatch(fetchAuthMe());
+    if (authMe) {
+      dispatch(fetchCart());
+    }
   }, [])
+
 
   return (
     <div className="wrapper">

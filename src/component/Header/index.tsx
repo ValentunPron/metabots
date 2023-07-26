@@ -14,7 +14,7 @@ interface IHeader {
 }
 
 export const Header = ({ authMe, cart }: IHeader): JSX.Element => {
-	const dispatch = useDispatch();
+	const dispatch: Function = useDispatch();
 
 	const [burger, setBurger] = React.useState(false);
 	const [registerStatus, setRegisterStatus] = React.useState(false);
@@ -30,7 +30,6 @@ export const Header = ({ authMe, cart }: IHeader): JSX.Element => {
 		}
 	};
 
-
 	const location = useLocation();
 	const link = location.pathname.substring(1);
 
@@ -38,7 +37,7 @@ export const Header = ({ authMe, cart }: IHeader): JSX.Element => {
 		<>
 			<header>
 				<div className="container">
-					<div className={`${styles.header} ${burger ? styles.active : ''}`}>
+					<div className={`${styles.header} ${burger ? styles.active : ''} container`}>
 						<Link to='/' className='logo' onClick={() => setBurger(false)}>
 							<img src={logo} alt="logo" width={45} height={45} />
 							Metabots

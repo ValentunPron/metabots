@@ -125,11 +125,15 @@ header {
 	width: 100vw;
 	height: 40px;
 	text-align: center;
-	transition: all 0.4s ease;
+	transition: all 0.3s ease;
 
 	&:hover {
 		background-color: #45D9FC;
 		color: #1E1F28;
+	}
+
+	&:active {
+		transform: translateY(2px);
 	}
 
 	&.trans {
@@ -141,6 +145,12 @@ header {
 			background-color: #1E1F28;
 			color: #45D9FC;
 		}
+	}
+
+	&.not_active {
+		background-color: #1E1F28;
+		color: #45D9FC;
+		pointer-events: none;
 	}
 }
 

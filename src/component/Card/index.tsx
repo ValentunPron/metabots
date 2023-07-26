@@ -6,10 +6,11 @@ import { IRobot } from '../../types/IRobot';
 
 interface ICard {
 	currentItem: IRobot,
+	cartCheck: IRobot[],
 	addRobot: Function,
 }
 
-export const Card = ({ currentItem, addRobot }: ICard): JSX.Element => {
+export const Card = ({ currentItem, cartCheck, addRobot }: ICard): JSX.Element => {
 
 	const cardRarety: any = {
 		'Common': styles.common,
@@ -18,6 +19,8 @@ export const Card = ({ currentItem, addRobot }: ICard): JSX.Element => {
 		'Epic': styles.epic,
 		'Legendary': styles.legendary,
 	}
+
+	const checkBuy = cartCheck.find(obj => obj._id === currentItem._id);
 
 	return (
 		<div className={`${styles.card} ${cardRarety[currentItem.rarety.name]}`}>
@@ -67,7 +70,11 @@ export const Card = ({ currentItem, addRobot }: ICard): JSX.Element => {
 					<Link to={`/market/${currentItem._id}`}>
 						<button className='button'>Details</button>
 					</Link>
-					<button className='button trans' onClick={() => addRobot(currentItem)}>Buy Now</button>
+					{
+						checkBuy
+							? <button className={`button trans not_active`}>Bought</button>
+							: <button className={`button trans`} onClick={() => addRobot(currentItem._id)}>Buy Now</button>
+					}
 				</div>
 			</div>
 		</div>

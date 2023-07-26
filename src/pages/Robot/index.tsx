@@ -4,13 +4,28 @@ import styles from './RobotPages.module.scss'
 import { IRobot } from "../../types/IRobot"
 import { CheckBoxItem } from "../../component"
 import logo from "../../assest/image/logo.png";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { buyCard } from "../../redux/slices/cart";
 
 interface IRobotPages {
 	currentItem: IRobot
 }
 
 export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
+	const dispatch: Function = useDispatch();
+
+	const { cart } = useSelector((state: any) => {
+		return {
+
+			cart: state.cart.items,
+		}
+	});
+
+
+	const addRobots = (robotId: string) => {
+		dispatch(buyCard(robotId));;
+	}
 
 	React.useEffect(() => {
 		document.body.scrollTo(0, 250)
@@ -19,6 +34,8 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 	if (!currentItem) {
 		return <Navigate to='/' />
 	}
+
+	const checkBuy = cart.find((obj: IRobot) => obj._id === currentItem._id);
 
 	return (
 		<>
@@ -132,7 +149,11 @@ export const Robot = ({ currentItem }: IRobotPages): JSX.Element => {
 										<p className={styles.totalPrice_price}>{currentItem.price}<span>[${currentItem.realyPrice}]</span></p>
 									</div>
 									<div className={styles.price_action}>
-										<button className={`${styles.price_button} button trans`}>Place bid</button>
+										{
+											checkBuy
+												? <button className={`button trans not_active`}>Bought</button>
+												: <button className={`button trans`} onClick={() => addRobots(currentItem._id)}>Buy Now</button>
+										}
 									</div>
 								</div>
 							</div>

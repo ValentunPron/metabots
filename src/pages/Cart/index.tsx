@@ -4,10 +4,10 @@ import styles from './Cart.module.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { IRobot } from '../../types/IRobot';
 import priceIMG from '../../assest/image/logo.png';
-import { removeItem } from '../../redux/slices/cart';
+import { fetchCart, removeCard } from '../../redux/slices/cart';
 
 export const Cart = (): JSX.Element => {
-	const dispatch = useDispatch();
+	const dispatch: Function = useDispatch();
 
 	const { authMe, cart } = useSelector((state: any) => {
 		return {
@@ -16,8 +16,12 @@ export const Cart = (): JSX.Element => {
 		}
 	});
 
+	React.useEffect(() => {
+		dispatch(fetchCart());
+	}, [])
+
 	const onRemoveItem = (id: string) => {
-		dispatch(removeItem(id));
+		dispatch(removeCard(id));
 	}
 
 	if (!authMe.data) {
