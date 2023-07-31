@@ -2,7 +2,7 @@ import axios from "axios";
 //process.env.REACT_APP_API_URL,
 //https://medabots-server.onrender.com'
 
-const base = 'http://localhost:4444'
+const base = 'https://medabots-server.onrender.com'
 
 const instance = axios.create({
 	baseURL: base
