@@ -1,7 +1,6 @@
 {
 	"robots": [
 		{
-			"id": 0,
 			"name": "Geisha",
 			"age": 3892,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
@@ -21,7 +20,6 @@
 			"realyPrice": 64
 		},
 		{
-			"id": 1,
 			"name": "Geisa",
 			"age": 389,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/01.png",
@@ -41,7 +39,6 @@
 			"realyPrice": 22
 		},
 		{
-			"id": 3,
 			"name": "Legs",
 			"age": 392,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/02.png",
@@ -61,7 +58,6 @@
 			"realyPrice": 30
 		},
 		{
-			"id": 4,
 			"name": "R. Hand",
 			"age": 2,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
@@ -81,7 +77,7 @@
 			"realyPrice": 90
 		},
 		{
-			"id": 5,
+
 			"name": "R. Hand",
 			"age": 2,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/03.png",
@@ -101,7 +97,6 @@
 			"realyPrice": 90
 		},
 		{
-			"id": 5,
 			"name": "L. Hand",
 			"age": 21,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/04.png",
@@ -121,7 +116,6 @@
 			"realyPrice": 90
 		},
 		{
-			"id": 6,
 			"name": "R. Hand",
 			"age": 7221,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/05.png",
@@ -141,7 +135,6 @@
 			"realyPrice": 90
 		},
 		{
-			"id": 7,
 			"name": "Kredi",
 			"age": 600,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/06.png",
@@ -161,7 +154,6 @@
 			"realyPrice": 40
 		},
 		{
-			"id": 8,
 			"name": "R. Hand",
 			"age": 251,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/07.png",
@@ -181,7 +173,6 @@
 			"realyPrice": 40
 		},
 		{
-			"id": 9,
 			"name": "Moren",
 			"age": 2241,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/08.png",
@@ -201,7 +192,6 @@
 			"realyPrice": 30
 		},
 		{
-			"id": 10,
 			"name": "Uronus",
 			"age": 631,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/09.png",
@@ -221,7 +211,6 @@
 			"realyPrice": 20
 		},
 		{
-			"id": 11,
 			"name": "Flypi",
 			"age": 1234,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/10.png",
@@ -241,7 +230,6 @@
 			"realyPrice": 20
 		},
 		{
-			"id": 12,
 			"name": "Arromy",
 			"age": 1024,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/11.png",
@@ -261,7 +249,6 @@
 			"realyPrice": 20
 		},
 		{
-			"id": 13,
 			"name": "Legs Spider",
 			"age": 104,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/12.png",
@@ -281,7 +268,6 @@
 			"realyPrice": 20
 		},
 		{
-			"id": 14,
 			"name": "R. Hand",
 			"age": 4,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/13.png",
@@ -301,7 +287,6 @@
 			"realyPrice": 40
 		},
 		{
-			"id": 15,
 			"name": "L. Hand",
 			"age": 4,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/14.png",
@@ -321,7 +306,6 @@
 			"realyPrice": 40
 		},
 		{
-			"id": 16,
 			"name": "L. Hand",
 			"age": 213,
 			"img": "https://raw.githubusercontent.com/ValentunPron/metabots/main/src/assest/image/market/15.png",

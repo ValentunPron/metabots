@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/metabots/static/css/main.75ba1af7.css",
-    "main.js": "/metabots/static/js/main.7d839678.js",
+    "main.css": "/metabots/static/css/main.71dabeeb.css",
+    "main.js": "/metabots/static/js/main.628aa043.js",
     "static/media/header-robot.png": "/metabots/static/media/header-robot.ffac51404c9ead5d633f.png",
     "static/media/no_founded.png": "/metabots/static/media/no_founded.98693700b88679f4e018.png",
     "static/media/bBigerOver.woff": "/metabots/static/media/bBigerOver.90a0456519fc3b06fb77.woff",
@@ -11,11 +11,11 @@
     "index.html": "/metabots/index.html",
     "static/media/03.svg": "/metabots/static/media/03.ebf3451fac463fad9e9d04f8aa5c6d8a.svg",
     "static/media/02.svg": "/metabots/static/media/02.ea8cbb3fcd1de783872944bc6ff307ae.svg",
-    "main.75ba1af7.css.map": "/metabots/static/css/main.75ba1af7.css.map",
-    "main.7d839678.js.map": "/metabots/static/js/main.7d839678.js.map"
+    "main.71dabeeb.css.map": "/metabots/static/css/main.71dabeeb.css.map",
+    "main.628aa043.js.map": "/metabots/static/js/main.628aa043.js.map"
   },
   "entrypoints": [
-    "static/css/main.75ba1af7.css",
-    "static/js/main.7d839678.js"
+    "static/css/main.71dabeeb.css",
+    "static/js/main.628aa043.js"
   ]
 }
